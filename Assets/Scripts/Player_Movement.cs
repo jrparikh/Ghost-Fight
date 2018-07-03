@@ -9,6 +9,7 @@ public class Player_Movement : MonoBehaviour
 
     public Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
     public SpriteRenderer sprite;
+    //public Collider2D coll;
 
     public GameObject player;
     public Transform newParent;
@@ -19,6 +20,7 @@ public class Player_Movement : MonoBehaviour
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        //coll = GetComponent<Collider2D>();
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -33,6 +35,8 @@ public class Player_Movement : MonoBehaviour
         {
             //Debug.Log("Trigger");
             sprite.enabled = true;
+            //rb2d.isKinematic = false;
+            GetComponent<Collider2D>().enabled = true;
             player.transform.SetParent(null);
         }
     }
@@ -40,12 +44,13 @@ public class Player_Movement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log("Trigger");
-        if (col.gameObject.tag == "Bookshelf")
+        //if (col.gameObject.tag == "Bookshelf")
         {
             //if (Input.GetKeyDown("space"))
             {
                 //Debug.Log("Trigger");
                 sprite.enabled = false;
+                GetComponent<Collider2D>().enabled = false;
                 player.transform.SetParent(newParent);
             }
         }
