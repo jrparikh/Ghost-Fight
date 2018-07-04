@@ -14,16 +14,15 @@ public class Bookshelf : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb2d = GetComponent<Rigidbody2D>();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
-        Vector2 move = new Vector2(moveHorizontal, moveVertical);
-        rb2d.velocity = move * speed;
+        transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
+        transform.position += transform.up * Time.deltaTime * speed * moveVertical;
 
         if (Input.GetKeyDown("space"))
         {
@@ -38,7 +37,7 @@ public class Bookshelf : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        speed = 5;
+        speed = 10;
         collisionCheck = true;
     }
     void Fire()
