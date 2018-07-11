@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     //public Collider2D coll;
 
     public GameObject player;
-    private Transform newParent;
+    private Transform col;
 
     // Use this for initialization
     void Start()
@@ -38,22 +38,28 @@ public class Player_Movement : MonoBehaviour
             sprite.enabled = true;
             //rb2d.isKinematic = false;
             GetComponent<Collider2D>().enabled = true;
-            player.transform.SetParent(null);
+            //player.transform.SetParent(null);
+            transform.transform.parent = null;
+            transform.position += transform.right * moveHorizontal * speed;
+            speed = 10;
         }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        //Debug.Log("Trigger");
-        //if (col.gameObject.tag == "Bookshelf")
+        
+        if (col.gameObject.tag == "Bookshelf")
+            transform.transform.parent = col.transform;
+        if (col.gameObject.tag == "Chair")
+            transform.transform.parent = col.transform;
+        //if (Input.GetKeyDown("space"))
         {
-            //if (Input.GetKeyDown("space"))
-            {
                 //Debug.Log("Trigger");
                 sprite.enabled = false;
                 GetComponent<Collider2D>().enabled = false;
-                player.transform.SetParent(newParent);
+                //player.GetComponent<Transform>().SetParent(col.collider.Bookshelf);
+                speed = 0;
             }
-        }
+        
     }
 }

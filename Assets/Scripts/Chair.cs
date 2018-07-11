@@ -20,7 +20,6 @@ public class Chair : MonoBehaviour {
 	void Update () {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         transform.position += transform.up * Time.deltaTime * speed * moveVertical;
 

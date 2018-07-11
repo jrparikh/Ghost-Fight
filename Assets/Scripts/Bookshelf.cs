@@ -37,8 +37,11 @@ public class Bookshelf : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        speed = 10;
-        collisionCheck = true;
+        if (col.gameObject.tag == "Player")
+        {
+            speed = 10;
+            collisionCheck = true;
+        }
     }
     void Fire()
     {
