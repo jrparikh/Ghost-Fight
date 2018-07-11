@@ -12,6 +12,8 @@ public class Chair : MonoBehaviour {
     private float attackCd = 0.3f;
     public Collider2D attackTrigger;
 
+    public Vector2 jumpHeight;
+
     void Start () {
         attackTrigger.enabled = false;
     }
@@ -19,14 +21,15 @@ public class Chair : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
-        transform.position += transform.up * Time.deltaTime * speed * moveVertical;
+        //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 0"))
         {
-            speed = 0;
-            collisionCheck = false;
+            //speed = 0;
+            //collisionCheck = false;
+            GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         }
 
         if (collisionCheck == true)
@@ -53,7 +56,7 @@ public class Chair : MonoBehaviour {
             }
         }
     }
-
+    /*
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
@@ -61,5 +64,5 @@ public class Chair : MonoBehaviour {
             speed = 10;
             collisionCheck = true;
         }
-    }
+    }*/
 }
