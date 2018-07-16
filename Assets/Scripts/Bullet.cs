@@ -17,4 +17,13 @@ public class Bullet : MonoBehaviour {
     {
         this.rb.velocity = new Vector2(VelX, VelY);
     }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        //if (other.gameObject.tag == "Enemy")
+        {
+            //other.gameObject.GetComponent<Chair>().CurrentHP -= damage;
+            //DestroyObject(other.gameObject);
+            //Destroy(gameObject);
+        }
+    }
 }

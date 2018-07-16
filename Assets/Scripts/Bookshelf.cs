@@ -12,6 +12,12 @@ public class Bookshelf : MonoBehaviour {
     public float fireRate;
     public bool collisionCheck = false;
 
+    public int MaxHP = 100;
+    public int CurrentHP = 100;
+
+    public string jumpButton = "Jump_P2";
+    public string horizontalCtrl = "Horizontal_P2";
+
     public Vector2 jumpHeight;
 
     // Use this for initialization
@@ -21,12 +27,12 @@ public class Bookshelf : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxis(horizontalCtrl);
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
         
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 0"))
+        if (Input.GetButtonDown(jumpButton))
         {
             //speed = 0;
             //collisionCheck = false;

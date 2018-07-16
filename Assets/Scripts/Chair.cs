@@ -5,12 +5,17 @@ using UnityEngine;
 public class Chair : MonoBehaviour {
     public float speed;
     public bool collisionCheck = false;
+    public string jumpButton = "Jump_P1";
+    public string horizontalCtrl = "Horizontal_P1";
 
     //Fighting
     private bool attacking = false;
     private float attackTimer = 0;
     private float attackCd = 0.3f;
     public Collider2D attackTrigger;
+
+    public int MaxHP = 100;
+    public int CurrentHP = 100;
 
     public Vector2 jumpHeight;
 
@@ -20,20 +25,19 @@ public class Chair : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxis(horizontalCtrl);
+        //float jump = Input.GetAxis("Jump_P1");
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
 
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 0"))
+        if (Input.GetButtonDown(jumpButton))
         {
             //speed = 0;
             //collisionCheck = false;
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         }
 
-        if (collisionCheck == true)
-        {
             if (Input.GetKeyDown(KeyCode.LeftShift) && !attacking)
             {
                 attacking = true;
@@ -54,7 +58,7 @@ public class Chair : MonoBehaviour {
                     attackTrigger.enabled = false;
                 }
             }
-        }
+        
     }
     /*
     void OnCollisionEnter2D(Collision2D col)

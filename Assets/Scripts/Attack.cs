@@ -4,37 +4,13 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour {
 
-    private bool attacking = false;
-    private float attackTimer = 0;
-    private float attackCd = 0.3f;
-    public Collider2D attackTrigger;
-
-    void Awake()
+    void OnCollisionEnter2D(Collision2D other)
     {
-        attackTrigger.enabled = false;
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown("f") && !attacking)
+        //if (other.gameObject.tag == "Enemy")
         {
-            attacking = true;
-            attackTimer = attackCd;
-
-            attackTrigger.enabled = true;
-        }
-
-        if (attacking)
-        {
-            if(attackTimer > 0)
-            {
-                attackTimer -= Time.deltaTime;
-            }
-            else
-            {
-                attacking = false;
-                attackTrigger.enabled = false;
-            }
+            //other.gameObject.GetComponent<Chair>().CurrentHP -= damage;
+            DestroyObject(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }
