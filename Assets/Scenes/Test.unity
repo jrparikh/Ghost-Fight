@@ -201,15 +201,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  Projectile: {fileID: 1609064290790058, guid: 18720df7d5f37884b95d3bd9413bbf55, type: 2}
+  ProjectileRight: {fileID: 1073718989831430, guid: abd487a3c7fb33e45a2d12b2edacca27,
+    type: 2}
+  ProjectileLeft: {fileID: 1097531246782148, guid: 2f8f3466dfae2bf4ab5d5ae91dbd0f3e,
+    type: 2}
   fireSpeed: 2
   fireRate: 0.5
   collisionCheck: 0
+  rb2d: {fileID: 0}
+  facingRight: 1
+  direction: 0
   MaxHP: 100
   CurrentHP: 100
   jumpButton: Jump_P2
   horizontalCtrl: Horizontal_P2
+  trigger: Fire_P2
   jumpHeight: {x: 0, y: 10}
+  isGrounded: 1
 --- !u!50 &380403186
 Rigidbody2D:
   serializedVersion: 4
@@ -227,7 +235,7 @@ Rigidbody2D:
   m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &380403187
@@ -378,10 +386,13 @@ MonoBehaviour:
   collisionCheck: 0
   jumpButton: Jump_P1
   horizontalCtrl: Horizontal_P1
+  trigger: Fire_P1
   attackTrigger: {fileID: 1378645881}
+  facingRight: 1
   MaxHP: 100
   CurrentHP: 100
-  jumpHeight: {x: 0, y: 10}
+  jumpHeight: {x: 0, y: 20}
+  isGrounded: 1
 --- !u!61 &486064508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -421,7 +432,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -611,7 +622,7 @@ GameObject:
   - component: {fileID: 868221292}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

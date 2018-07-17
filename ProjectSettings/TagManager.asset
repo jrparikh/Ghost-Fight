@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bookshelf
   - Chair
+  - Floor
   layers:
   - Default
   - TransparentFX

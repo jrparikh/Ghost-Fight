@@ -7,6 +7,7 @@ public class Chair : MonoBehaviour {
     public bool collisionCheck = false;
     public string jumpButton = "Jump_P1";
     public string horizontalCtrl = "Horizontal_P1";
+    public string trigger = "Fire_P1";
 
     //Fighting
     private bool attacking = false;
@@ -14,10 +15,14 @@ public class Chair : MonoBehaviour {
     private float attackCd = 0.3f;
     public Collider2D attackTrigger;
 
+    public bool facingRight = true;
+
     public int MaxHP = 100;
     public int CurrentHP = 100;
 
     public Vector2 jumpHeight;
+
+    public bool isGrounded = true;
 
     void Start () {
         attackTrigger.enabled = false;
@@ -31,14 +36,19 @@ public class Chair : MonoBehaviour {
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
 
-        if (Input.GetButtonDown(jumpButton))
+        if (moveHorizontal > 0 && !facingRight)
+            Flip();
+        else if (moveHorizontal < 0 && facingRight)
+            Flip();
+        if (Input.GetButtonDown(jumpButton) && isGrounded)
         {
             //speed = 0;
             //collisionCheck = false;
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
+            isGrounded = false;
         }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && !attacking)
+            if (Input.GetButtonDown(trigger) && !attacking)
             {
                 attacking = true;
                 attackTimer = attackCd;
@@ -60,13 +70,19 @@ public class Chair : MonoBehaviour {
             }
         
     }
-    /*
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Floor")
         {
-            speed = 10;
-            collisionCheck = true;
+            isGrounded = true;
         }
-    }*/
+    }
 }
