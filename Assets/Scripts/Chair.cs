@@ -17,8 +17,10 @@ public class Chair : MonoBehaviour {
 
     public bool facingRight = true;
 
-    public int MaxHP = 100;
-    public int CurrentHP = 100;
+    public float health = 100f;
+    public float damageAmount = 10f;
+    public SpriteRenderer healthBar;
+    private Vector3 healthScale;
 
     public Vector2 jumpHeight;
 
@@ -27,9 +29,14 @@ public class Chair : MonoBehaviour {
     void Start () {
         attackTrigger.enabled = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Awake()
+    {
+        healthScale = healthBar.transform.localScale;
+    }
+
+    // Update is called once per frame
+    void Update () {
         float moveHorizontal = Input.GetAxis(horizontalCtrl);
         //float jump = Input.GetAxis("Jump_P1");
         //float moveVertical = Input.GetAxis("Vertical");
@@ -68,6 +75,7 @@ public class Chair : MonoBehaviour {
                     attackTrigger.enabled = false;
                 }
             }
+        //Debug.Log(health);
         
     }
     void Flip()
@@ -78,11 +86,29 @@ public class Chair : MonoBehaviour {
         transform.localScale = theScale;
     }
 
+    void TakeDamage()
+    {
+        health -= damageAmount;
+    }
+
+    public void UpdateHealthBar()
+    {
+        // Set the health bar's colour to proportion of the way between green and red based on the player's health.
+        healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - health * 0.01f);
+
+        // Set the scale of the health bar to be proportional to the player's health.
+        healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Floor")
         {
             isGrounded = true;
+        }
+        else
+        {
+            TakeDamage();
         }
     }
 }

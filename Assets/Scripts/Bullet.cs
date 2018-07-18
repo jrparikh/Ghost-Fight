@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour {
     void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
-        Physics.IgnoreCollision(transform.root.GetComponent<Collider>(), GetComponent<Collider>());
+        //Physics.IgnoreCollision(transform.root.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour {
         }else
         {
             //other.gameObject.GetComponent<Chair>().CurrentHP -= damage;
-            DestroyObject(other.gameObject);
+            //DestroyObject(other.gameObject);
             Destroy(gameObject);
         }
     }
