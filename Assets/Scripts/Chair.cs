@@ -75,7 +75,11 @@ public class Chair : MonoBehaviour {
                     attackTrigger.enabled = false;
                 }
             }
-        //Debug.Log(health);
+
+            if (health <= 0)
+            {
+                Death();
+            }
         
     }
     void Flip()
@@ -100,6 +104,11 @@ public class Chair : MonoBehaviour {
         healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
     }
 
+    void Death()
+    {
+        Destroy(gameObject);
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Floor")
@@ -109,6 +118,7 @@ public class Chair : MonoBehaviour {
         else
         {
             TakeDamage();
+            UpdateHealthBar();
         }
     }
 }
