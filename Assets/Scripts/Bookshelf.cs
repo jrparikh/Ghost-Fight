@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bookshelf : MonoBehaviour {
 
@@ -39,11 +40,11 @@ public class Bookshelf : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-        float moveHorizontal = Input.GetAxis(horizontalCtrl);
+        float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
-        //Vector2 move = new Vector2(moveHorizontal);
+        //Vector2 move = new Vector2(moveHorizontal,0);
         //rb2d.velocity = move * speed;
 
         if (moveHorizontal > 0 && !facingRight)
@@ -81,9 +82,15 @@ public class Bookshelf : MonoBehaviour {
         }
         else
         {
-            TakeDamage();
-            UpdateHealthBar();
+            //TakeDamage();
+            //UpdateHealthBar();
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        TakeDamage();
+        UpdateHealthBar();
     }
     void Fire()
     {
@@ -91,13 +98,13 @@ public class Bookshelf : MonoBehaviour {
         
         if(facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
             Destroy(clone, 2.0f);
         }
 
         if (!facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
             Destroy(clone, 2.0f);
         }
     }
@@ -117,8 +124,9 @@ public class Bookshelf : MonoBehaviour {
     }
 
     void Death()
-    {
-        Destroy(gameObject);
+    {       
+        //Destroy(gameObject);
+        SceneManager.LoadScene("Test");
     }
 
     void Flip()

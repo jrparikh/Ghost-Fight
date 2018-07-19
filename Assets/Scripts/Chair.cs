@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Chair : MonoBehaviour {
     public float speed;
@@ -37,7 +38,7 @@ public class Chair : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        float moveHorizontal = Input.GetAxis(horizontalCtrl);
+        float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float jump = Input.GetAxis("Jump_P1");
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
@@ -47,6 +48,7 @@ public class Chair : MonoBehaviour {
             Flip();
         else if (moveHorizontal < 0 && facingRight)
             Flip();
+
         if (Input.GetButtonDown(jumpButton) && isGrounded)
         {
             //speed = 0;
@@ -59,7 +61,6 @@ public class Chair : MonoBehaviour {
             {
                 attacking = true;
                 attackTimer = attackCd;
-
                 attackTrigger.enabled = true;
             }
 
@@ -106,7 +107,21 @@ public class Chair : MonoBehaviour {
 
     void Death()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        SceneManager.LoadScene("Test");
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Bullet")
+        {
+            TakeDamage();
+            UpdateHealthBar();
+        }
+        else if (col.gameObject.name == "attackTrigger")
+        {
+            Physics2D.IgnoreCollision(col.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -117,8 +132,8 @@ public class Chair : MonoBehaviour {
         }
         else
         {
-            TakeDamage();
-            UpdateHealthBar();
+            //TakeDamage();
+            //UpdateHealthBar();
         }
     }
 }

@@ -27,7 +27,11 @@ public class Bullet : MonoBehaviour {
         {
             //other.gameObject.GetComponent<Chair>().CurrentHP -= damage;
             //DestroyObject(other.gameObject);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Destroy(gameObject);
     }
 }
