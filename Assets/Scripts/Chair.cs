@@ -18,6 +18,9 @@ public class Chair : MonoBehaviour {
 
     public bool facingRight = true;
 
+    public Animator anim;
+    int State = 0;
+
     public float health = 100f;
     public float damageAmount = 10f;
     public SpriteRenderer healthBar;
@@ -29,6 +32,7 @@ public class Chair : MonoBehaviour {
 
     void Start () {
         attackTrigger.enabled = false;
+        anim = GetComponent<Animator>();
     }
 
     void Awake()
@@ -37,7 +41,7 @@ public class Chair : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
         float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float jump = Input.GetAxis("Jump_P1");
         //float moveVertical = Input.GetAxis("Vertical");
@@ -45,9 +49,13 @@ public class Chair : MonoBehaviour {
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
 
         if (moveHorizontal > 0 && !facingRight)
+        {
             Flip();
+        }
         else if (moveHorizontal < 0 && facingRight)
+        { 
             Flip();
+        }
 
         if (Input.GetButtonDown(jumpButton) && isGrounded)
         {
@@ -55,13 +63,32 @@ public class Chair : MonoBehaviour {
             //collisionCheck = false;
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
+            State = 2;
+            anim.SetInteger("State", State);
         }
-
-            if (Input.GetButtonDown(trigger) && !attacking)
+        if (Mathf.Abs(moveHorizontal) > 0.25)
+        {
+            State = 3;
+            anim.SetInteger("State", State);
+        }
+        if (Input.anyKey == false && anim != null)
+        {
+            State = 0;
+            anim.SetInteger("State", State);
+        }/*
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("ChairAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("Jump")  || anim.GetCurrentAnimatorStateInfo(0).IsName("ChairRun"))
+        {
+            // do something
+            State = 0;
+            anim.SetInteger("State", State);
+        }*/
+        if (Input.GetButtonDown(trigger) && !attacking)
             {
                 attacking = true;
                 attackTimer = attackCd;
                 attackTrigger.enabled = true;
+                State = 1;
+                anim.SetInteger("State", State);
             }
 
             if (attacking)
@@ -81,7 +108,7 @@ public class Chair : MonoBehaviour {
             {
                 Death();
             }
-        
+        //anim.SetInteger("State", State);
     }
     void Flip()
     {
@@ -129,6 +156,8 @@ public class Chair : MonoBehaviour {
         if (col.gameObject.tag == "Floor")
         {
             isGrounded = true;
+            State = 0;
+            anim.SetInteger("State", State);
         }
         else
         {
