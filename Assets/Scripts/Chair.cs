@@ -71,7 +71,7 @@ public class Chair : MonoBehaviour {
             State = 3;
             anim.SetInteger("State", State);
         }
-        else if (Input.anyKey == false && anim != null)
+        else if (Input.anyKey == false || Mathf.Abs(moveHorizontal) >= 0 && anim != null)
         {
             State = 0;
             anim.SetInteger("State", State);
