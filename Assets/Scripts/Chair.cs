@@ -66,17 +66,17 @@ public class Chair : MonoBehaviour {
             State = 2;
             anim.SetInteger("State", State);
         }
-        if (Mathf.Abs(moveHorizontal) > 0.25)
+        if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
             State = 3;
             anim.SetInteger("State", State);
         }
-        if (Input.anyKey == false && anim != null)
+        else if (Input.anyKey == false && anim != null)
         {
             State = 0;
             anim.SetInteger("State", State);
-        }/*
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("ChairAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("Jump")  || anim.GetCurrentAnimatorStateInfo(0).IsName("ChairRun"))
+        }
+       /* if( anim.GetCurrentAnimatorStateInfo(0).IsName("ChairRun"))
         {
             // do something
             State = 0;
