@@ -60,6 +60,8 @@
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
      <Compile Include="Assets\Scripts\Player_Movement.cs" />
+     <Compile Include="Assets\Scripts\Player1Spawn.cs" />
+     <Compile Include="Assets\Scripts\Player2Spawn.cs" />
      <Compile Include="Assets\Scripts\PlayerSelection.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
  <Reference Include="UnityEngine.CoreModule">

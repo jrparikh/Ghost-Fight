@@ -11,7 +11,7 @@ public class BookShelfSelection : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (PlayerSelection.MinPlayersIn == false) {
-			PlayerSelection.Player1 = "BookShelf";
+			PlayerSelection.Player1 = "Bookshelf";
 			myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
 			PlayerSelection.Player2 = "Chair";
 			myGameObj2.GetComponent<SpriteRenderer>().sprite = mySprite2;

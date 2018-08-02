@@ -120,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 1714420882}
 --- !u!4 &458071437 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a,
+  m_PrefabParentObject: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a,
     type: 2}
   m_PrefabInternal: {fileID: 1042462775}
 --- !u!1 &478163522
@@ -452,7 +452,7 @@ Transform:
   m_LocalScale: {x: 7, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &791984836
 GameObject:
@@ -736,7 +736,7 @@ Transform:
   m_LocalScale: {x: 37.64318, y: 1.3221498, z: 4.090037}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905444988
 GameObject:
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 905444990}
   - component: {fileID: 905444989}
   m_Layer: 0
-  m_Name: ui_healthDisplayChair
+  m_Name: Player2Health
   m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -877,8 +877,25 @@ Transform:
   m_LocalScale: {x: 7, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1004607877 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1780943499688296, guid: d68bb631570fe4586aa6184c4ac2692c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1714420882}
+--- !u!114 &1004607878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1004607877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef2dc1bc846f4d14bece36432ad20ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1HP: {fileID: 1038916377}
 --- !u!1 &1038916377
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +906,7 @@ GameObject:
   - component: {fileID: 1038916379}
   - component: {fileID: 1038916378}
   m_Layer: 0
-  m_Name: ui_healthDisplayBookshelf
+  m_Name: Player1Health
   m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -921,7 +938,7 @@ Transform:
   - {fileID: 1778440595}
   - {fileID: 809475374}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1042462775
 Prefab:
@@ -930,49 +947,66 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.77
       objectReference: {fileID: 0}
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalPosition.y
       value: -7
       objectReference: {fileID: 0}
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4545322681042546, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+    - target: {fileID: 4846446933075218, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114505436628038614, guid: b09bafb1c92b545f284502f85e2b738a,
+    - target: {fileID: 114485084691964680, guid: 756ab18dddb664d07b793eadb0deb43a,
         type: 2}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2122832900}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b09bafb1c92b545f284502f85e2b738a, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1042462776 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1218153693064518, guid: 756ab18dddb664d07b793eadb0deb43a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1042462775}
+--- !u!114 &1042462777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042462776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dfa5b819cdd4a479ea7d20efa93d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player2HP: {fileID: 905444988}
 --- !u!61 &1378645881 stripped
 BoxCollider2D:
-  m_PrefabParentObject: {fileID: 61962454010777862, guid: b09bafb1c92b545f284502f85e2b738a,
+  m_PrefabParentObject: {fileID: 61905832981813400, guid: 756ab18dddb664d07b793eadb0deb43a,
     type: 2}
   m_PrefabInternal: {fileID: 1042462775}
 --- !u!1001 &1714420882
@@ -1012,13 +1046,29 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4897885019683580, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114947679021761112, guid: d68bb631570fe4586aa6184c4ac2692c,
         type: 2}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1778440596}
+    - target: {fileID: 212633554521819596, guid: d68bb631570fe4586aa6184c4ac2692c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f9ab63557db31846a24fbbd6cdb6ff2,
+        type: 3}
+    - target: {fileID: 61535924432029098, guid: d68bb631570fe4586aa6184c4ac2692c,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 61535924432029098, guid: d68bb631570fe4586aa6184c4ac2692c,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
   m_IsPrefabParent: 0
@@ -1191,7 +1241,7 @@ Transform:
   m_LocalScale: {x: 7, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949322971
 GameObject:
