@@ -8,14 +8,16 @@ public class ChairSelection : MonoBehaviour {
 	public GameObject myGameObj1;
 	public GameObject myGameObj2;
 	// Use this for initialization
-	void OnMouseDown()
+	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (PlayerSelection.MinPlayersIn == false) {
-			PlayerSelection.Player1 = "Chair";
-			myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
+		if (PlayerSelection.MinPlayersIn == 2) {
+			if (col.CompareTag ("Player1")) {
+				PlayerSelection.Player1 = "Chair";
+				myGameObj1.GetComponent<SpriteRenderer> ().sprite = mySprite1;
+			}
 			PlayerSelection.Player2 = "Bookshelf";
 			myGameObj2.GetComponent<SpriteRenderer>().sprite = mySprite2;
-			PlayerSelection.MinPlayersIn = true;
+
 		}
 	}
 	

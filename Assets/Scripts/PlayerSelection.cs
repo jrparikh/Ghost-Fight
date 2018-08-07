@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerSelection : MonoBehaviour {
 	public static string Player1;
 	public static string Player2;
-	public static bool MinPlayersIn = false;
+	public static int MinPlayersIn = 0;
 	public GameObject Text1;
 	public Sprite mySprite;
 	public Sprite mySprite1;
@@ -16,14 +16,14 @@ public class PlayerSelection : MonoBehaviour {
 	public GameObject myGameObj2;
 	// Update is called once per frame
 	void Update () {
-		if (MinPlayersIn == true) {
+		if (MinPlayersIn == 2) {
 			Text1.GetComponent<SpriteRenderer>().sprite = mySprite;
 			if (Input.GetKeyDown (KeyCode.Space)) {
-				MinPlayersIn = false;
+				MinPlayersIn = 0;
 				SceneManager.LoadScene("Test");
 			}
 			if (Input.GetKeyDown (KeyCode.Escape)) {
-				MinPlayersIn = false;
+				MinPlayersIn = 0;
 				Text1.GetComponent<SpriteRenderer>().sprite = null;
 				myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
 				myGameObj2.GetComponent<SpriteRenderer>().sprite = mySprite2;
