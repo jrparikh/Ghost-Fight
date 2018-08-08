@@ -124,9 +124,10 @@ GameObject:
   - component: {fileID: 114145439}
   - component: {fileID: 114145438}
   - component: {fileID: 114145441}
+  - component: {fileID: 114145442}
   m_Layer: 0
   m_Name: Player2Cursor
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,6 +231,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.64, y: 2.64}
   m_EdgeRadius: 0
+--- !u!50 &114145442
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114145437}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &230171482
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,9 +262,10 @@ GameObject:
   - component: {fileID: 230171484}
   - component: {fileID: 230171483}
   - component: {fileID: 230171486}
+  - component: {fileID: 230171487}
   m_Layer: 0
   m_Name: Player1Cursor
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,7 +353,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -347,6 +369,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!50 &230171487
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230171482}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &510709532
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,9 +418,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySprite1: {fileID: 21300000, guid: 07a4658ae5f9e8a4dbf62ce242ba89d3, type: 3}
-  mySprite2: {fileID: 21300000, guid: b2934adc92d06442fbf2da705313eb56, type: 3}
   myGameObj1: {fileID: 591547545}
   myGameObj2: {fileID: 569150873}
+  Player1: {fileID: 230171482}
+  Player2: {fileID: 114145437}
+  Player1Enter: 0
+  Player2Enter: 0
 --- !u!61 &510709534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -503,9 +548,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySprite1: {fileID: 0}
-  mySprite2: {fileID: 0}
   myGameObj1: {fileID: 0}
   myGameObj2: {fileID: 0}
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  Player1Enter: 0
+  Player2Enter: 0
 --- !u!1 &591547545
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,9 +729,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySprite1: {fileID: 21300000, guid: b2934adc92d06442fbf2da705313eb56, type: 3}
-  mySprite2: {fileID: 21300000, guid: 07a4658ae5f9e8a4dbf62ce242ba89d3, type: 3}
   myGameObj1: {fileID: 591547545}
   myGameObj2: {fileID: 569150873}
+  Player1: {fileID: 230171482}
+  Player2: {fileID: 114145437}
+  Player1Enter: 0
+  Player2Enter: 0
 --- !u!61 &1220562634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -813,6 +864,8 @@ MonoBehaviour:
   mySprite2: {fileID: 0}
   myGameObj1: {fileID: 591547545}
   myGameObj2: {fileID: 569150873}
+  Cursor1: {fileID: 230171482}
+  Cursor2: {fileID: 114145437}
 --- !u!1 &1632663984
 GameObject:
   m_ObjectHideFlags: 0

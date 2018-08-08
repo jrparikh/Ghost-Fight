@@ -14,6 +14,8 @@ public class PlayerSelection : MonoBehaviour {
 	public Sprite mySprite2;
 	public GameObject myGameObj1;
 	public GameObject myGameObj2;
+	public GameObject Cursor1;
+	public GameObject Cursor2;
 	// Update is called once per frame
 	void Update () {
 		if (MinPlayersIn == 2) {
@@ -29,7 +31,8 @@ public class PlayerSelection : MonoBehaviour {
 				myGameObj2.GetComponent<SpriteRenderer>().sprite = mySprite2;
 				Player1 = null;
 				Player2 = null;
-
+				Cursor1.GetComponent<CursorMovement> ().speed = 5;
+				Cursor2.GetComponent<CursorMovement> ().speed = 5;
 			}
 			//if button pressed down go to game screen
 
