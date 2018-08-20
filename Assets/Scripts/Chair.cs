@@ -13,7 +13,7 @@ public class Chair : MonoBehaviour {
     //Fighting
     private bool attacking = false;
     private float attackTimer = 0;
-    private float attackCd = 0.3f;
+    private float attackCd = 1.0f;
     public Collider2D attackTrigger;
 
     public bool facingRight = true;
@@ -66,22 +66,27 @@ public class Chair : MonoBehaviour {
             State = 2;
             anim.SetInteger("State", State);
         }
-        if (Mathf.Abs(moveHorizontal) >= 0.0001)
+        else if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
             State = 3;
             anim.SetInteger("State", State);
         }
-        else if (Input.anyKey == false || Mathf.Abs(moveHorizontal) >= 0 && anim != null)
+        else if(Input.anyKey == false)// && anim != null)//|| Mathf.Abs(moveHorizontal) >= 0
         {
             State = 0;
             anim.SetInteger("State", State);
         }
-       /* if( anim.GetCurrentAnimatorStateInfo(0).IsName("ChairRun"))
+        /*if (Input.GetButtonDown(trigger))
         {
-            // do something
-            State = 0;
+            State = 1;
             anim.SetInteger("State", State);
         }*/
+        /* if( anim.GetCurrentAnimatorStateInfo(0).IsName("ChairRun"))
+         {
+             // do something
+             State = 0;
+             anim.SetInteger("State", State);
+         }*/
         if (Input.GetButtonDown(trigger) && !attacking)
             {
                 attacking = true;
@@ -117,7 +122,10 @@ public class Chair : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    void Attack()
+    {
 
+    }
     void TakeDamage()
     {
         health -= damageAmount;
