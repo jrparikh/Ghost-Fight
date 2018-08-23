@@ -31,18 +31,33 @@ public class Chair : MonoBehaviour {
     public bool isGrounded = true;
 
     void Start () {
-        attackTrigger.enabled = false;
+		switch (this.tag) {
+		case "Player1":
+			healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
+			//TO DO
+			//put controls here
+			break;
+		case "Player2":
+			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();;
+			//TO DO
+			//put controls here
+			break;
+
+		}
+		healthScale = healthBar.transform.localScale;
+		attackTrigger.enabled = false;
         anim = GetComponent<Animator>();
     }
 
     void Awake()
     {
-        healthScale = healthBar.transform.localScale;
+		
     }
 
     // Update is called once per frame
     void Update() {
-        float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
+		UpdateHealthBar();
+		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float jump = Input.GetAxis("Jump_P1");
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
@@ -151,7 +166,7 @@ public class Chair : MonoBehaviour {
         if (col.gameObject.tag == "Bullet")
         {
             TakeDamage();
-            UpdateHealthBar();
+            //UpdateHealthBar();
         }
         else if (col.gameObject.name == "attackTrigger")
         {

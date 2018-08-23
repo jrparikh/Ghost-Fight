@@ -31,16 +31,30 @@ public class Bookshelf : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb2d = GetComponent<Rigidbody2D>();
+		switch (this.tag) {
+		case "Player1":
+			healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
+			//TO DO
+			//put controls here
+			break;
+		case "Player2":
+			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();;
+			//TO DO
+			//put controls here
+			break;
+
+		}
+		healthScale = healthBar.transform.localScale;
+		rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Awake()
     {
-        healthScale = healthBar.transform.localScale;
     }
     // Update is called once per frame
     void Update () {
-        float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
+		UpdateHealthBar();
+		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
@@ -90,7 +104,7 @@ public class Bookshelf : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         TakeDamage();
-        UpdateHealthBar();
+        //
     }
     void Fire()
     {

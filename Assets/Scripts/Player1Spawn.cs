@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player1Spawn : MonoBehaviour {
 	public GameObject Player1HP;
 	GameObject Player1Clone;
-	SpriteRenderer HealthBar;
+	//SpriteRenderer HealthBar;
     // Use this for initialization
 	void Start () {
 		Player1Clone = Instantiate (Resources.Load(PlayerSelection.Player1), transform.position, Quaternion.identity) as GameObject;
