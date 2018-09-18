@@ -92,7 +92,12 @@ public class Bookshelf : MonoBehaviour {
             Fire();
             anim.SetTrigger("Attack");
         }
-        if (Input.anyKey == false)
+        if (Mathf.Abs(moveHorizontal) >= 0.0001)
+        {
+            State = 1;
+            anim.SetInteger("State", State);
+        }
+        else if (Input.anyKey == false)
         {
             State = 0;
             anim.SetInteger("State", State);
