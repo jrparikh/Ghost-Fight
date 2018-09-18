@@ -22,9 +22,9 @@ public class Bookshelf : MonoBehaviour {
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
 
-    public string jumpButton = "Jump_P2";
-    public string horizontalCtrl = "Horizontal_P2";
-    public string trigger = "Fire_P2";
+    private string jumpButton = "Jump_P2";
+    private string horizontalCtrl = "Horizontal_P2";
+    private string trigger = "Fire_P2";
 
     public Vector2 jumpHeight;
     public bool isGrounded = true;
@@ -34,14 +34,20 @@ public class Bookshelf : MonoBehaviour {
 		switch (this.tag) {
 		case "Player1":
 			healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
-			//TO DO
-			//put controls here
-			break;
+            //TO DO
+            //put controls here
+            jumpButton = "Jump_P1";
+            horizontalCtrl = "Horizontal_P1";
+            trigger = "Fire_P1";
+            break;
 		case "Player2":
 			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();;
-			//TO DO
-			//put controls here
-			break;
+            //TO DO
+            //put controls here
+            jumpButton = "Jump_P2";
+            horizontalCtrl = "Horizontal_P2";
+            trigger = "Fire_P2";
+            break;
 
 		}
 		healthScale = healthBar.transform.localScale;

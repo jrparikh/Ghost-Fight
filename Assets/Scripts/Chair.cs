@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class Chair : MonoBehaviour {
     public float speed;
     public bool collisionCheck = false;
-    public string jumpButton = "Jump_P1";
-    public string horizontalCtrl = "Horizontal_P1";
-    public string trigger = "Fire_P1";
+    private string jumpButton = "Jump_P1";
+    private string horizontalCtrl = "Horizontal_P1";
+    private string trigger = "Fire_P1";
 
     //Fighting
     private bool attacking = false;
@@ -36,12 +36,18 @@ public class Chair : MonoBehaviour {
 			healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
 			//TO DO
 			//put controls here
+            jumpButton = "Jump_P1";
+            horizontalCtrl = "Horizontal_P1";
+            trigger = "Fire_P1";
 			break;
 		case "Player2":
 			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();;
-			//TO DO
-			//put controls here
-			break;
+            //TO DO
+            //put controls here
+            jumpButton = "Jump_P2";
+            horizontalCtrl = "Horizontal_P2";
+            trigger = "Fire_P2";
+            break;
 
 		}
 		healthScale = healthBar.transform.localScale;
