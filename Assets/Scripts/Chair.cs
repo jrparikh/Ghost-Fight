@@ -18,7 +18,7 @@ public class Chair : MonoBehaviour {
 
     public bool facingRight = true;
 
-    public Animator anim;
+    private Animator anim;
     int State = 0;
 
     public float health = 100f;

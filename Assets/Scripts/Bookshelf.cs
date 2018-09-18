@@ -28,6 +28,8 @@ public class Bookshelf : MonoBehaviour {
 
     public Vector2 jumpHeight;
     public bool isGrounded = true;
+    private Animator anim;
+    int State = 0;
 
     // Use this for initialization
     void Start () {
@@ -52,6 +54,7 @@ public class Bookshelf : MonoBehaviour {
 		}
 		healthScale = healthBar.transform.localScale;
 		rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Awake()
@@ -87,8 +90,13 @@ public class Bookshelf : MonoBehaviour {
         if (Input.GetButtonDown(trigger)) //&& collisionCheck == true)
         {
             Fire();
+            anim.SetTrigger("Attack");
         }
-
+        if (Input.anyKey == false)
+        {
+            State = 0;
+            anim.SetInteger("State", State);
+        }
         if (health <= 0)
         {
             Death();
