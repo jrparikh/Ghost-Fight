@@ -1007,6 +1007,15 @@ Prefab:
       propertyPath: m_Size.x
       value: 0.28152382
       objectReference: {fileID: 0}
+    - target: {fileID: 61905832981813400, guid: 756ab18dddb664d07b793eadb0deb43a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677188871349938, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+      propertyPath: m_TagString
+      value: attackTrigger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0

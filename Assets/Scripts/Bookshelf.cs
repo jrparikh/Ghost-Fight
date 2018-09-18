@@ -108,18 +108,18 @@ public class Bookshelf : MonoBehaviour {
         {
             isGrounded = true;
         }
-        else
+        else if (col.gameObject.tag == "attackTrigger")
         {
-            //TakeDamage();
+            TakeDamage();
             //UpdateHealthBar();
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        TakeDamage();
+    //void OnTriggerEnter2D(Collider2D col)
+    //{
+        //TakeDamage();
         //
-    }
+    //}
     void Fire()
     {
         fireRate = Time.time + fireSpeed;
