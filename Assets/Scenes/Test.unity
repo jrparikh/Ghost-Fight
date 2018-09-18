@@ -247,7 +247,7 @@ MonoBehaviour:
   jumpButton: Jump_P1
   horizontalCtrl: Horizontal_P1
   trigger: Fire_P1
-  attackTrigger: {fileID: 1378645881}
+  attackTrigger: {fileID: 0}
   facingRight: 1
   anim: {fileID: 0}
   health: 100
@@ -984,6 +984,16 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2122832900}
+    - target: {fileID: 61905832981813400, guid: 756ab18dddb664d07b793eadb0deb43a,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.32885313
+      objectReference: {fileID: 0}
+    - target: {fileID: 61905832981813400, guid: 756ab18dddb664d07b793eadb0deb43a,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.28152382
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0
@@ -1004,11 +1014,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player2HP: {fileID: 905444988}
---- !u!61 &1378645881 stripped
-BoxCollider2D:
-  m_PrefabParentObject: {fileID: 61905832981813400, guid: 756ab18dddb664d07b793eadb0deb43a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1042462775}
 --- !u!1001 &1714420882
 Prefab:
   m_ObjectHideFlags: 0
@@ -1317,6 +1322,31 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &2066632503 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1677188871349938, guid: 756ab18dddb664d07b793eadb0deb43a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1042462775}
+--- !u!50 &2066632504
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2066632503}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2122832898
 GameObject:
   m_ObjectHideFlags: 0

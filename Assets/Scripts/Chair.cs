@@ -13,7 +13,7 @@ public class Chair : MonoBehaviour {
     //Fighting
     private bool attacking = false;
     private float attackTimer = 0;
-    private float attackCd = 1.0f;
+    private float attackCd = 0.25f;
     public Collider2D attackTrigger;
 
     public bool facingRight = true;
@@ -107,8 +107,8 @@ public class Chair : MonoBehaviour {
                 attacking = true;
                 attackTimer = attackCd;
                 attackTrigger.enabled = true;
-                State = 1;
-                anim.SetInteger("State", State);
+                //State = 1;
+                anim.SetTrigger("Attack");
             }
 
             if (attacking)
