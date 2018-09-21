@@ -169,15 +169,15 @@ public class Chair : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "attackTrigger")
         {
             TakeDamage();
             //UpdateHealthBar();
         }
-        else if (col.gameObject.name == "attackTrigger")
+        /*else if (col.gameObject.name == "attackTrigger")
         {
             Physics2D.IgnoreCollision(col.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        }
+        }*/
     }
 
     void OnCollisionEnter2D(Collision2D col)

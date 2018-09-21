@@ -9,6 +9,7 @@ public class Bookshelf : MonoBehaviour {
     //public Rigidbody2D rb2d;
 
     public GameObject ProjectileRight, ProjectileLeft;
+    public GameObject SpecialProjectileRight, SpecialProjectileLeft, SpecialProjectileRight2, SpecialProjectileLeft2;
     public float fireSpeed;
     public float fireRate;
     public bool collisionCheck = false;
@@ -25,6 +26,7 @@ public class Bookshelf : MonoBehaviour {
     private string jumpButton = "Jump_P2";
     private string horizontalCtrl = "Horizontal_P2";
     private string trigger = "Fire_P2";
+    private string special = "Fire2_P2";
 
     public Vector2 jumpHeight;
     public bool isGrounded = true;
@@ -92,6 +94,13 @@ public class Bookshelf : MonoBehaviour {
             Fire();
             anim.SetTrigger("Attack");
         }
+
+        if (Input.GetButtonDown(special))
+        {
+            SpecialAttack();
+            anim.SetTrigger("Attack");
+        }
+
         if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
             State = 1;
@@ -112,6 +121,8 @@ public class Bookshelf : MonoBehaviour {
         if (col.gameObject.tag == "Floor")
         {
             isGrounded = true;
+            State = 0;
+            anim.SetInteger("State", State);
         }
         else if (col.gameObject.tag == "attackTrigger")
         {
@@ -139,6 +150,31 @@ public class Bookshelf : MonoBehaviour {
         {
             GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
             Destroy(clone, 2.0f);
+        }
+    }
+
+    void SpecialAttack()
+    {
+        fireRate = Time.time + fireSpeed;
+
+        if (facingRight)
+        {
+            GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
+            Destroy(clone, 2.0f);
+            GameObject clone1 = (GameObject)Instantiate(SpecialProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y + 0.5f), Quaternion.Euler(0, 30, 0));
+            Destroy(clone1, 2.0f);
+            GameObject clone2 = (GameObject)Instantiate(SpecialProjectileRight2, new Vector3(transform.position.x + 1.2f, transform.position.y - 0.5f), transform.rotation);
+            Destroy(clone2, 2.0f);
+        }
+
+        if (!facingRight)
+        {
+            GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
+            Destroy(clone, 2.0f);
+            GameObject clone1 = (GameObject)Instantiate(SpecialProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y + 0.50f), transform.rotation);
+            Destroy(clone1, 2.0f);
+            GameObject clone2 = (GameObject)Instantiate(SpecialProjectileLeft2, new Vector3(transform.position.x - 1.2f, transform.position.y - 0.50f), transform.rotation);
+            Destroy(clone2, 2.0f);
         }
     }
 

@@ -1032,7 +1032,7 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1778440596}
-    - target: {fileID: 114015774892929426, guid: d68bb631570fe4586aa6184c4ac2692c,
+    - target: {fileID: 114268312676642364, guid: d68bb631570fe4586aa6184c4ac2692c,
         type: 2}
       propertyPath: Player1HP
       value: 
@@ -1040,23 +1040,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1714420883 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1670536042003506, guid: d68bb631570fe4586aa6184c4ac2692c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1714420882}
---- !u!114 &1714420884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1714420883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef2dc1bc846f4d14bece36432ad20ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player1HP: {fileID: 1038916377}
 --- !u!1 &1778440594
 GameObject:
   m_ObjectHideFlags: 0

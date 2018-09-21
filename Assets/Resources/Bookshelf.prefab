@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114727805370872472}
   - component: {fileID: 50220390979524200}
   - component: {fileID: 95561199849827648}
+  - component: {fileID: 114268312676642364}
   m_Layer: 0
   m_Name: Bookshelf
   m_TagString: Bookshelf
@@ -106,6 +107,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114268312676642364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670536042003506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef2dc1bc846f4d14bece36432ad20ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1HP: {fileID: 0}
 --- !u!114 &114727805370872472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,6 +134,14 @@ MonoBehaviour:
   ProjectileRight: {fileID: 1073718989831430, guid: abd487a3c7fb33e45a2d12b2edacca27,
     type: 2}
   ProjectileLeft: {fileID: 1097531246782148, guid: 2f8f3466dfae2bf4ab5d5ae91dbd0f3e,
+    type: 2}
+  SpecialProjectileRight: {fileID: 1497548992042658, guid: 351859da95539984687b2d9768e054e8,
+    type: 2}
+  SpecialProjectileLeft: {fileID: 1660728621392712, guid: 9d3308bd76de4e74aaf0dd16573b00f7,
+    type: 2}
+  SpecialProjectileRight2: {fileID: 1819928034138916, guid: a079269affc191d48a49be0cb5052a80,
+    type: 2}
+  SpecialProjectileLeft2: {fileID: 1564876923108116, guid: 9d30b238972766f49a6f8b1cc62618cd,
     type: 2}
   fireSpeed: 2
   fireRate: 0.5
