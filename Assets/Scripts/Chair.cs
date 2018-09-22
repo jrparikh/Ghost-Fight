@@ -162,10 +162,10 @@ public class Chair : MonoBehaviour {
 		else {
 			Direction = -1;
 		}
-		for (int i=0; i < 1800; i++) {
-			if (i % 60 == 0) {
-				transform.position += transform.right * Time.deltaTime * speed * Direction;
-			}
+		for (float i=0; i < 10f; i= i+ Time.deltaTime ) {
+			
+			print (Time.deltaTime);
+			    transform.position = new Vector3 (transform.position.x+(1*Direction* Time.deltaTime), transform.position.y, transform.position.z);
 		}
 		myCollider.enabled  = true;
 		myRigidbody.constraints = ~RigidbodyConstraints2D.FreezePositionY;
