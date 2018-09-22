@@ -63,8 +63,10 @@ public class Chair : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+		
 		UpdateHealthBar();
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
+
         //float jump = Input.GetAxis("Jump_P1");
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
@@ -132,7 +134,7 @@ public class Chair : MonoBehaviour {
                 }
             }
 		*/
-		if (Input.GetButtonDown(trigger)){
+		if (Input.GetButton(trigger)){
 			SpecialAttack ();
 		  }
             if (health <= 0)
@@ -150,26 +152,37 @@ public class Chair : MonoBehaviour {
     }
     void SpecialAttack()
     {
-		BoxCollider2D myCollider = this.GetComponent<BoxCollider2D>();
-		Rigidbody2D myRigidbody = this.GetComponent<Rigidbody2D> ();
+		//BoxCollider2D myCollider = this.GetComponent<BoxCollider2D>();
+		//Rigidbody2D myRigidbody = this.GetComponent<Rigidbody2D> ();
 		int Direction = 0;
-		myCollider.enabled = false;
-		myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
-		specialTrigger.enabled = true;
+		//myCollider.enabled = false;
+		//myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+		//specialTrigger.enabled = true;
 		if (facingRight == true) {
 			Direction = 1;
 		} 
 		else {
 			Direction = -1;
 		}
-		for (float i=0; i < 10f; i= i+ Time.deltaTime ) {
-			
-			print (Time.deltaTime);
-			    transform.position = new Vector3 (transform.position.x+(1*Direction* Time.deltaTime), transform.position.y, transform.position.z);
+		//raycasts
+		RaycastHit2D hit;
+		Ray2D AttackRay = new Ray2D (transform.position, transform.right*Direction);
+		Debug.DrawRay (transform.position, transform.right * 5f*Direction);
+		if(Physics2D.Raycast(AttackRay ,out hit, (5f * Direction) ) )
+		{
+			print ("hellow");
+			print (hit.collider.tag);
+			if(hit.collider.tag.Contains("Bookshelf"))
+			{
+				Bookshelf.health -= 10f;
+				print(Bookshelf.health);
+			}
+			transform.position += transform.right * 5 * Direction;
 		}
-		myCollider.enabled  = true;
-		myRigidbody.constraints = ~RigidbodyConstraints2D.FreezePositionY;
-		specialTrigger.enabled = false;
+		//telport
+		//myCollider.enabled  = true;
+		//myRigidbody.constraints = ~RigidbodyConstraints2D.FreezePositionY;
+		//specialTrigger.enabled = false;
     }
     void TakeDamage()
     {
