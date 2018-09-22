@@ -15,6 +15,7 @@ public class Chair : MonoBehaviour {
     private float attackTimer = 0;
     private float attackCd = 0.25f;
     public Collider2D attackTrigger;
+	public Collider2D specialTrigger;
 
     public bool facingRight = true;
 
@@ -108,7 +109,8 @@ public class Chair : MonoBehaviour {
              State = 0;
              anim.SetInteger("State", State);
          }*/
-        if (Input.GetButtonDown(trigger) && !attacking)
+         /*
+		if (Input.GetButtonDown(trigger) && !attacking)
             {
                 attacking = true;
                 attackTimer = attackCd;
@@ -129,7 +131,10 @@ public class Chair : MonoBehaviour {
                     attackTrigger.enabled = false;
                 }
             }
-
+		*/
+		if (Input.GetButtonDown(trigger)){
+			SpecialAttack ();
+		  }
             if (health <= 0)
             {
                 Death();
@@ -143,9 +148,28 @@ public class Chair : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    void Attack()
+    void SpecialAttack()
     {
-
+		BoxCollider2D myCollider = this.GetComponent<BoxCollider2D>();
+		Rigidbody2D myRigidbody = this.GetComponent<Rigidbody2D> ();
+		int Direction = 0;
+		myCollider.enabled = false;
+		myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+		specialTrigger.enabled = true;
+		if (facingRight == true) {
+			Direction = 1;
+		} 
+		else {
+			Direction = -1;
+		}
+		for (int i=0; i < 1800; i++) {
+			if (i % 60 == 0) {
+				transform.position += transform.right * Time.deltaTime * speed * Direction;
+			}
+		}
+		myCollider.enabled  = true;
+		myRigidbody.constraints = ~RigidbodyConstraints2D.FreezePositionY;
+		specialTrigger.enabled = false;
     }
     void TakeDamage()
     {
