@@ -111,7 +111,7 @@ public class Chair : MonoBehaviour {
              State = 0;
              anim.SetInteger("State", State);
          }*/
-         /*
+         
 		if (Input.GetButtonDown(trigger) && !attacking)
             {
                 attacking = true;
@@ -133,14 +133,15 @@ public class Chair : MonoBehaviour {
                     attackTrigger.enabled = false;
                 }
             }
-		*/
+		/*
 		if (Input.GetButtonDown(trigger)){
 			SpecialAttack ();
-		  }
-            if (health <= 0)
-            {
-                Death();
-            }
+		 }
+		 */
+         if (health <= 0)
+         {
+             Death();
+         }
         //anim.SetInteger("State", State);
     }
     void Flip()
@@ -152,12 +153,7 @@ public class Chair : MonoBehaviour {
     }
     void SpecialAttack()
     {
-		//BoxCollider2D myCollider = this.GetComponent<BoxCollider2D>();
-		//Rigidbody2D myRigidbody = this.GetComponent<Rigidbody2D> ();
 		int Direction = 0;
-		//myCollider.enabled = false;
-		//myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
-		//specialTrigger.enabled = true;
 		if (facingRight == true) {
 			Direction = 1;
 		} 
@@ -165,22 +161,19 @@ public class Chair : MonoBehaviour {
 			Direction = -1;
 		}
 		//raycasts
-		RaycastHit2D[] hit = Physics2D.RaycastAll (transform.position, Vector3.right*3f*Direction);
-		Debug.DrawRay (transform.position, Vector3.right*3f*Direction);
+		RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position,transform.right,2f*Direction);
+		Debug.DrawRay (transform.position, Vector3.right*Direction);
 		for (int i = 0; i < hit.Length; i++)
 		{
 			print ("hellow");
-			print (hit);
-			if (hit[i].collider.tag.Contains ("Bookshelf")) {
-				Bookshelf.health -= 10f;
-				print (Bookshelf.health);
+			print (hit[i].collider);
+			if (hit[i].collider.tag.Contains ("Player")) {
+
+				//Bookshelf.health -= 10f;
+				print ("Damage");
 			}
-			transform.position += transform.right * 3f * Direction;
+			transform.position += transform.right * 2f * Direction;
 		}
-		//telport
-		//myCollider.enabled  = true;
-		//myRigidbody.constraints = ~RigidbodyConstraints2D.FreezePositionY;
-		//specialTrigger.enabled = false;
     }
     void TakeDamage()
     {

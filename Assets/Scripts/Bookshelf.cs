@@ -18,7 +18,7 @@ public class Bookshelf : MonoBehaviour {
     public bool facingRight = true;
     public int direction = 0;
 
-    public static float health = 100f;
+    public float health = 100f;
     public float damageAmount = 10f;
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
