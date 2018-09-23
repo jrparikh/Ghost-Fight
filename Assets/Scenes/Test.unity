@@ -1014,6 +1014,15 @@ Prefab:
       propertyPath: m_TagString
       value: attackTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 61182961642334012, guid: 756ab18dddb664d07b793eadb0deb43a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880925313480534, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0
@@ -1069,6 +1078,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61576802796656064, guid: d68bb631570fe4586aa6184c4ac2692c,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}

@@ -134,7 +134,7 @@ public class Chair : MonoBehaviour {
                 }
             }
 		*/
-		if (Input.GetButton(trigger)){
+		if (Input.GetButtonDown(trigger)){
 			SpecialAttack ();
 		  }
             if (health <= 0)
@@ -165,19 +165,17 @@ public class Chair : MonoBehaviour {
 			Direction = -1;
 		}
 		//raycasts
-		RaycastHit2D hit;
-		Ray2D AttackRay = new Ray2D (transform.position, transform.right*Direction);
-		Debug.DrawRay (transform.position, transform.right * 5f*Direction);
-		if(Physics2D.Raycast(AttackRay ,out hit, (5f * Direction) ) )
+		RaycastHit2D[] hit = Physics2D.RaycastAll (transform.position, Vector3.right*3f*Direction);
+		Debug.DrawRay (transform.position, Vector3.right*3f*Direction);
+		for (int i = 0; i < hit.Length; i++)
 		{
 			print ("hellow");
-			print (hit.collider.tag);
-			if(hit.collider.tag.Contains("Bookshelf"))
-			{
+			print (hit);
+			if (hit[i].collider.tag.Contains ("Bookshelf")) {
 				Bookshelf.health -= 10f;
-				print(Bookshelf.health);
+				print (Bookshelf.health);
 			}
-			transform.position += transform.right * 5 * Direction;
+			transform.position += transform.right * 3f * Direction;
 		}
 		//telport
 		//myCollider.enabled  = true;
