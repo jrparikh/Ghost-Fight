@@ -11,9 +11,11 @@ public class BookShelfSelection : MonoBehaviour {
 	public GameObject Player2;
 	public bool Player1Enter = false;
 	public bool Player2Enter = false;
-	void Update (){
+    private string jumpButton = "Fire_P1";
+    private string jumpButton2 = "Fire_P2";
+    void Update (){
 		if (Player1Enter == true) {
-			if (Input.GetKeyDown (KeyCode.Q)) {
+			if (Input.GetButton(jumpButton)) {
 				PlayerSelection.Player1 = "Bookshelf";
 				myGameObj1.GetComponent<SpriteRenderer> ().sprite = mySprite1;
 				PlayerSelection.MinPlayersIn++;
@@ -22,7 +24,7 @@ public class BookShelfSelection : MonoBehaviour {
 			}
 		}
 		if (Player2Enter == true) {
-			if (Input.GetKeyDown (KeyCode.O)) {
+			if (Input.GetButton(jumpButton2)) {
 				PlayerSelection.Player2 = "Bookshelf";
 				myGameObj2.GetComponent<SpriteRenderer> ().sprite = mySprite1;
 				PlayerSelection.MinPlayersIn++;

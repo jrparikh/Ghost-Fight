@@ -9,14 +9,34 @@ public class CursorMovement : MonoBehaviour {
 	public string rightKey;
 	public float  speed;
 	public Vector2  direction;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    
+    private string horizontalCtrl = "Horizontal_P2";
+    private string verticalCtrl = "Vertical_P2";
+    // Use this for initialization
+    void Start () {
+        switch (this.tag)
+        {
+            case "Player1":
+                //put controls here
+                horizontalCtrl = "Horizontal_P1";
+                verticalCtrl = "Vertical_P1";
+                break;
+            case "Player2":
+                //put controls here
+                horizontalCtrl = "Horizontal_P2";
+                verticalCtrl = "Vertical_P2";
+                break;
+
+        }
+    }
 	// Update is called once per frame
 	void Update () {
-		GetInput ();
-		Move ();
+		//GetInput ();
+        float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
+        float moveVertical = Input.GetAxisRaw(verticalCtrl);
+        transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
+        transform.position += transform.up * Time.deltaTime * speed * moveVertical;
+       // Move();
 	}
 	private void Move(){
 		transform.Translate (direction * speed * Time.deltaTime);
