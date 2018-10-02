@@ -131,12 +131,15 @@ public class Bookshelf : MonoBehaviour {
         }
     }
 
-    //void OnTriggerEnter2D(Collider2D col)
-    //{
-        //TakeDamage();
-        //
-    //}
-    void Fire()
+    /*void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "attackTrigger")
+        {
+            TakeDamage();
+    //UpdateHealthBar();
+        }
+    }*/
+void Fire()
     {
         fireRate = Time.time + fireSpeed;
         
