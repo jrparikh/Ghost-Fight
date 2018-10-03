@@ -9,6 +9,7 @@ public class Chair : MonoBehaviour {
     private string jumpButton = "Jump_P1";
     private string horizontalCtrl = "Horizontal_P1";
     private string trigger = "Fire_P1";
+    private string special = "Fire_P2";
 
     //Fighting
     private bool attacking = false;
@@ -40,7 +41,8 @@ public class Chair : MonoBehaviour {
             jumpButton = "Jump_P1";
             horizontalCtrl = "Horizontal_P1";
             trigger = "Fire_P1";
-			break;
+            special = "Fire_P2";
+            break;
 		case "Player2":
 			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();
             //TO DO
@@ -48,6 +50,7 @@ public class Chair : MonoBehaviour {
             jumpButton = "Jump_P2";
             horizontalCtrl = "Horizontal_P2";
             trigger = "Fire_P2";
+            special = "Fire2_P2";
             break;
 
 		}
@@ -111,7 +114,7 @@ public class Chair : MonoBehaviour {
              State = 0;
              anim.SetInteger("State", State);
          }*/
-		/*
+		
 		if (Input.GetButtonDown(trigger) && !attacking)
             {
                 attacking = true;
@@ -133,8 +136,8 @@ public class Chair : MonoBehaviour {
                     attackTrigger.enabled = false;
                 }
             }
-		*/
-		if (Input.GetButtonDown(trigger)){
+		
+		if (Input.GetButtonDown(special)){
 			SpecialAttack ();
 		 }
 		 
