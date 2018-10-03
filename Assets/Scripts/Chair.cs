@@ -22,7 +22,7 @@ public class Chair : MonoBehaviour {
     private Animator anim;
     int State = 0;
 
-    public float health = 100f;
+	private float health = 100f;
     public float damageAmount = 10f;
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
@@ -42,7 +42,7 @@ public class Chair : MonoBehaviour {
             trigger = "Fire_P1";
 			break;
 		case "Player2":
-			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();;
+			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();
             //TO DO
             //put controls here
             jumpButton = "Jump_P2";
@@ -63,8 +63,8 @@ public class Chair : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-		
-		UpdateHealthBar();
+		GetComponent<Health>().Myhealth = health;
+		//UpdateHealthBar();
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
 
         //float jump = Input.GetAxis("Jump_P1");
@@ -111,7 +111,7 @@ public class Chair : MonoBehaviour {
              State = 0;
              anim.SetInteger("State", State);
          }*/
-         
+		/*
 		if (Input.GetButtonDown(trigger) && !attacking)
             {
                 attacking = true;
@@ -133,15 +133,12 @@ public class Chair : MonoBehaviour {
                     attackTrigger.enabled = false;
                 }
             }
-		/*
+		*/
 		if (Input.GetButtonDown(trigger)){
 			SpecialAttack ();
 		 }
-		 */
-         if (health <= 0)
-         {
-             Death();
-         }
+		 
+         
         //anim.SetInteger("State", State);
     }
     void Flip()
@@ -168,14 +165,14 @@ public class Chair : MonoBehaviour {
 			print ("hellow");
 			print (hit[i].collider);
 			if (hit[i].collider.tag.Contains ("Player")) {
-
 				//Bookshelf.health -= 10f;
 				print ("Damage");
 			}
 			transform.position += transform.right * 2f * Direction;
 		}
     }
-    void TakeDamage()
+   /*
+	void TakeDamage()
     {
         health -= damageAmount;
     }
@@ -188,18 +185,14 @@ public class Chair : MonoBehaviour {
         // Set the scale of the health bar to be proportional to the player's health.
         healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
     }
-
-    void Death()
-    {
-        //Destroy(gameObject);
-        SceneManager.LoadScene("Test");
-    }
+*/
+   
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "attackTrigger")
         {
-            TakeDamage();
+            //TakeDamage();
             //UpdateHealthBar();
         }
         /*else if (col.gameObject.name == "attackTrigger")

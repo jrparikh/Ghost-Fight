@@ -18,7 +18,7 @@ public class Bookshelf : MonoBehaviour {
     public bool facingRight = true;
     public int direction = 0;
 
-    public float health = 100f;
+    private float health = 150f;
     public float damageAmount = 10f;
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
@@ -64,7 +64,8 @@ public class Bookshelf : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-		UpdateHealthBar();
+		//UpdateHealthBar();
+		GetComponent<Health>().Myhealth = health;
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
@@ -111,10 +112,7 @@ public class Bookshelf : MonoBehaviour {
             State = 0;
             anim.SetInteger("State", State);
         }
-        if (health <= 0)
-        {
-            Death();
-        }
+       
     }
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -126,7 +124,7 @@ public class Bookshelf : MonoBehaviour {
         }
         else if (col.gameObject.tag == "attackTrigger")
         {
-            TakeDamage();
+            //TakeDamage();
             //UpdateHealthBar();
         }
     }
@@ -180,7 +178,7 @@ void Fire()
             Destroy(clone2, 2.0f);
         }
     }
-
+	/*
     void TakeDamage()
     {
         health -= damageAmount;
@@ -194,13 +192,13 @@ void Fire()
         // Set the scale of the health bar to be proportional to the player's health.
         healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
     }
-
+	
     void Death()
     {       
         //Destroy(gameObject);
         SceneManager.LoadScene("Test");
     }
-
+*/
     void Flip()
     {
         facingRight = !facingRight;
