@@ -35,7 +35,7 @@ public class Chair : MonoBehaviour {
     void Start () {
 		switch (this.tag) {
 		case "Player1":
-			healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
+			//healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
 			//TO DO
 			//put controls here
             jumpButton = "Jump_P1";
@@ -44,7 +44,7 @@ public class Chair : MonoBehaviour {
             special = "Fire_P2";
             break;
 		case "Player2":
-			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();
+			//healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();
             //TO DO
             //put controls here
             jumpButton = "Jump_P2";
@@ -54,7 +54,8 @@ public class Chair : MonoBehaviour {
             break;
 
 		}
-		healthScale = healthBar.transform.localScale;
+		//healthScale = healthBar.transform.localScale;
+		GetComponent<Health>().Myhealth = health;
 		attackTrigger.enabled = false;
         anim = GetComponent<Animator>();
     }
@@ -66,7 +67,7 @@ public class Chair : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-		GetComponent<Health>().Myhealth = health;
+
 		//UpdateHealthBar();
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
 
@@ -168,8 +169,11 @@ public class Chair : MonoBehaviour {
 			print ("hellow");
 			print (hit[i].collider);
 			if (hit[i].collider.tag.Contains ("Player")) {
-				//Bookshelf.health -= 10f;
-				print ("Damage");
+				if (hit [i].collider.tag != this.tag) {
+					print (hit [i].collider.GetComponent<Health> ().Myhealth);
+					hit [i].collider.GetComponent<Health> ().Myhealth -= 5f;
+				}
+			
 			}
 			transform.position += transform.right * 2f * Direction;
 		}

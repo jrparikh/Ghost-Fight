@@ -1027,19 +1027,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a,
     type: 2}
   m_PrefabInternal: {fileID: 1042462775}
---- !u!114 &1002731570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1002731562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5df4ed25742e49beac5e892fcdee56a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Myhealth: 100
-  healthBar: {fileID: 0}
 --- !u!1 &1038916377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,19 +1257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player1HP: {fileID: 1038916377}
---- !u!114 &1714420885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1714420883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5df4ed25742e49beac5e892fcdee56a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Myhealth: 100
-  healthBar: {fileID: 0}
 --- !u!1 &1778440594
 GameObject:
   m_ObjectHideFlags: 0

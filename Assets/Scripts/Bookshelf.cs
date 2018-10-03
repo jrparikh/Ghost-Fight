@@ -37,7 +37,7 @@ public class Bookshelf : MonoBehaviour {
     void Start () {
 		switch (this.tag) {
 		case "Player1":
-			healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
+			//healthBar = GameObject.Find ("HealthBar1").GetComponent<SpriteRenderer>();
             //TO DO
             //put controls here
             jumpButton = "Jump_P1";
@@ -46,7 +46,7 @@ public class Bookshelf : MonoBehaviour {
             special = "Fire2_P1";
             break;
 		case "Player2":
-			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();;
+			//healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();;
             //TO DO
             //put controls here
             jumpButton = "Jump_P2";
@@ -56,7 +56,8 @@ public class Bookshelf : MonoBehaviour {
             break;
 
 		}
-		healthScale = healthBar.transform.localScale;
+		//healthScale = healthBar.transform.localScale;
+		GetComponent<Health>().Myhealth = health;
 		rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -67,7 +68,7 @@ public class Bookshelf : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		//UpdateHealthBar();
-		GetComponent<Health>().Myhealth = health;
+
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;

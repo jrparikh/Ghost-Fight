@@ -23,7 +23,6 @@ public class Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		UpdateHealthBar();
-		print (Myhealth);
 		if (Myhealth <= 0)
 		{
 			Death();
@@ -41,6 +40,6 @@ public class Health : MonoBehaviour {
 	void Death()
 	{
 		//Destroy(gameObject);
-		//SceneManager.LoadScene("Test");
+		SceneManager.LoadScene("Test");
 	}
 }

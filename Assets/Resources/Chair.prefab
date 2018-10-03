@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61644343704912896}
   - component: {fileID: 114342118357955804}
   - component: {fileID: 50005769976816950}
+  - component: {fileID: 114741090987135518}
   m_Layer: 0
   m_Name: attackTrigger
   m_TagString: attackTrigger
@@ -283,6 +284,18 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   jumpHeight: {x: 0, y: 20}
   isGrounded: 1
+--- !u!114 &114741090987135518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744256364467668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590fd9b44b211479dade94fa2fd86de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 10
 --- !u!212 &212146393733200692
 SpriteRenderer:
   m_ObjectHideFlags: 1
