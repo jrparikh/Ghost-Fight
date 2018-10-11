@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114293949853838934}
   - component: {fileID: 50820306913888080}
   - component: {fileID: 61558441622371198}
+  - component: {fileID: 114471623892380384}
   m_Layer: 0
   m_Name: SpecialBooksToRight1
   m_TagString: attackTrigger
@@ -101,6 +102,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VelX: 15
   VelY: 2
+--- !u!114 &114471623892380384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497548992042658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590fd9b44b211479dade94fa2fd86de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
 --- !u!212 &212122246503530546
 SpriteRenderer:
   m_ObjectHideFlags: 1

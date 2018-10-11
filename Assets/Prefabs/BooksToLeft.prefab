@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114231350088542344}
   - component: {fileID: 50149420569824654}
   - component: {fileID: 61719213046678160}
+  - component: {fileID: 114542837249129062}
   m_Layer: 0
   m_Name: BooksToLeft
   m_TagString: attackTrigger
@@ -101,6 +102,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VelX: -15
   VelY: 0
+--- !u!114 &114542837249129062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1097531246782148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590fd9b44b211479dade94fa2fd86de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
 --- !u!212 &212500254125450388
 SpriteRenderer:
   m_ObjectHideFlags: 1
