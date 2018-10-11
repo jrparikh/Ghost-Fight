@@ -17,9 +17,9 @@ public class ProjectileDamage : MonoBehaviour {
 	{
 		if (col.gameObject.tag.Contains ("Player")) {
 			col.gameObject.GetComponent<Health>().Myhealth -= Damage;
-			if (this.tag == "projectile") {
-				Destroy (gameObject);
-			}
+		}
+		if (this.tag == "projectile") {
+			Destroy (gameObject);
 		}
 	}
 }
