@@ -13,10 +13,13 @@ public class Chair : MonoBehaviour {
 
     //Fighting
     private bool attacking = false;
+	private bool Sattacking = false;
     private float attackTimer = 0;
+	private float SattackTimer = 0;
     private float attackCd = 0.25f;
     public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
+	public SpriteRenderer Flames;
 
     public bool facingRight = true;
 
@@ -57,6 +60,7 @@ public class Chair : MonoBehaviour {
 		//healthScale = healthBar.transform.localScale;
 		GetComponent<Health>().Myhealth = health;
 		attackTrigger.enabled = false;
+		Flames.enabled = false;
         anim = GetComponent<Animator>();
     }
 
@@ -117,30 +121,45 @@ public class Chair : MonoBehaviour {
          }*/
 		
 		if (Input.GetButtonDown(trigger) && !attacking)
-            {
-                attacking = true;
-                attackTimer = attackCd;
-                attackTrigger.enabled = true;
+        {
+            attacking = true;
+            attackTimer = attackCd;
+            attackTrigger.enabled = true;
                 //State = 1;
-                anim.SetTrigger("Attack");
-            }
+            anim.SetTrigger("Attack");
+        }
 
-            if (attacking)
-            {
-                if (attackTimer > 0)
-                {
-                    attackTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    attacking = false;
-                    attackTrigger.enabled = false;
-                }
-            }
+        if (attacking)
+        {
+          if (attackTimer > 0)
+          {
+            attackTimer -= Time.deltaTime;
+          }
+          else
+          {
+            attacking = false;
+            attackTrigger.enabled = false;
+           }
+        }
 		
-		if (Input.GetButtonDown(special)){
+		if (Input.GetButtonDown(special) && !Sattacking){
 			SpecialAttack ();
-		 }
+			Sattacking = true;
+			SattackTimer = attackCd;
+			Flames.enabled = true;
+		}
+		if (Sattacking) {
+			if (SattackTimer > 0)
+			{
+				SattackTimer -= Time.deltaTime;
+			}
+			else
+			{
+				Sattacking = false;
+				Flames.enabled = false;
+			}
+		}
+
 		 
          
         //anim.SetInteger("State", State);
@@ -170,12 +189,12 @@ public class Chair : MonoBehaviour {
 			print (hit[i].collider);
 			if (hit[i].collider.tag.Contains ("Player")) {
 				if (hit [i].collider.tag != this.tag) {
-					print (hit [i].collider.GetComponent<Health> ().Myhealth);
 					hit [i].collider.GetComponent<Health> ().Myhealth -= 5f;
 				}
 			
 			}
 			transform.position += transform.right * 2f * Direction;
+
 		}
     }
    /*
