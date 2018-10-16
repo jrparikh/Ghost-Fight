@@ -52,7 +52,7 @@ public class Bookshelf : MonoBehaviour {
             jumpButton = "Jump_P2";
             horizontalCtrl = "Horizontal_P2";
             trigger = "Fire_P2";
-            special = "Fire2_P1";
+            special = "Fire2_P2";
             break;
 
 		}

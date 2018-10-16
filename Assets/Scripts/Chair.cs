@@ -44,7 +44,7 @@ public class Chair : MonoBehaviour {
             jumpButton = "Jump_P1";
             horizontalCtrl = "Horizontal_P1";
             trigger = "Fire_P1";
-            special = "Fire_P2";
+            special = "Fire2_P1";
             break;
 		case "Player2":
 			//healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer>();
