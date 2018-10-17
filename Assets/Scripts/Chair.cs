@@ -80,7 +80,6 @@ public class Chair : MonoBehaviour {
 
 		//UpdateHealthBar();
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
-
         //float jump = Input.GetAxis("Jump_P1");
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
@@ -107,11 +106,15 @@ public class Chair : MonoBehaviour {
         else if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
             State = 3;
+			if (!Moving.isPlaying) {
+				Moving.Play ();
+			}
             anim.SetInteger("State", State);
         }
         else if(Input.anyKey == false)// && anim != null)//|| Mathf.Abs(moveHorizontal) >= 0
         {
             State = 0;
+			Moving.Stop ();
             anim.SetInteger("State", State);
         }
         /*if (Input.GetButtonDown(trigger))

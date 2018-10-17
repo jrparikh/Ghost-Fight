@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ProjectileDamage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bookshelf.cs">
     <Files>
-      <File FileName="Assets/Scripts/ProjectileDamage.cs" Line="20" Column="3" />
-      <File FileName="Assets/Scripts/Chair.cs" Line="172" Column="44" />
-      <File FileName="Assets/Scripts/Bookshelf.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Chair.cs" Line="41" Column="29" />
+      <File FileName="Assets/Scripts/ProjectileDamage.cs" Line="7" Column="4" />
+      <File FileName="Assets/Scripts/Bookshelf.cs" Line="60" Column="19" />
       <File FileName="Assets/Scripts/Player1Spawn.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Player2Spawn.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BookShelfSelection.cs" Line="1" Column="1" />
@@ -12,12 +12,11 @@
       <File FileName="Assets/Scripts/CursorMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerSelection.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Player_Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Health.cs" Line="23" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Volumes/MyHardDrive/Ghost-Fight/Assets/Scripts/Chair.cs" line="179" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
