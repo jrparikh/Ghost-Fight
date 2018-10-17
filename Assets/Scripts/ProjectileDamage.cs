@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileDamage : MonoBehaviour {
 	public float Damage;
-	public AudioSource Hit;
+	//public AudioSource Hit;
 	/*
 	public SpriteRenderer FX;
 	public bool attacking;
@@ -35,7 +35,7 @@ public class ProjectileDamage : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (col.gameObject.tag.Contains ("Player")) {
-			Hit.Play ();
+			//Hit.Play ();
 		 	/*
 			FX.enabled = true;
 			attacking = true;

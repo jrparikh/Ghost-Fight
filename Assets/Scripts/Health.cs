@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
 	public float Myhealth = 100f ;
+	private float CurrentHealth;
 	public SpriteRenderer healthBar;
 	private Vector3 healthScale;
+	public AudioSource Hit;
 	// Use this for initialization
 	void Start () {
 		switch (this.tag) {
@@ -18,15 +20,20 @@ public class Health : MonoBehaviour {
 			break;
 		}
 		healthScale = healthBar.transform.localScale;
+		CurrentHealth = Myhealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		UpdateHealthBar();
+		if (CurrentHealth != Myhealth) {
+			Hit.Play ();
+		}
 		if (Myhealth <= 0)
 		{
 			Death();
 		}
+		CurrentHealth = Myhealth;
 	}
 
 	public void UpdateHealthBar()

@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 5
-  Hit: {fileID: 0}
 --- !u!61 &72277469
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -637,13 +636,7 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212919311694697718, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 212919311694697718, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &510709532
@@ -1337,6 +1330,10 @@ Prefab:
     - target: {fileID: 4103218674200486, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670536042003506, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
