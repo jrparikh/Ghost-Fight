@@ -19,6 +19,7 @@ public class Chair : MonoBehaviour {
     private float attackCd = 0.25f;
     public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
+	public GameObject GO;
 	public SpriteRenderer Flames;
 
     public bool facingRight = true;
@@ -61,6 +62,7 @@ public class Chair : MonoBehaviour {
 		GetComponent<Health>().Myhealth = health;
 		attackTrigger.enabled = false;
 		Flames.enabled = false;
+		GO.SetActive(false);
         anim = GetComponent<Animator>();
     }
 
@@ -147,6 +149,7 @@ public class Chair : MonoBehaviour {
 			Sattacking = true;
 			SattackTimer = attackCd;
 			Flames.enabled = true;
+			GO.SetActive(true);
 		}
 		if (Sattacking) {
 			if (SattackTimer > 0)
@@ -157,6 +160,7 @@ public class Chair : MonoBehaviour {
 			{
 				Sattacking = false;
 				Flames.enabled = false;
+				GO.SetActive(false);
 			}
 		}
 
