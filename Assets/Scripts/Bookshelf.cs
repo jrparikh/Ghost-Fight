@@ -36,6 +36,7 @@ public class Bookshelf : MonoBehaviour {
 	//audio
 	public AudioSource Moving;
 	public AudioSource Shooting;
+	public AudioSource Shotgun;
     // Use this for initialization
     void Start () {
 		switch (this.tag) {
@@ -106,6 +107,7 @@ public class Bookshelf : MonoBehaviour {
         if (Input.GetButtonDown(special))
         {
             SpecialAttack();
+			Shotgun.Play ();
             anim.SetTrigger("Attack");
         }
 
