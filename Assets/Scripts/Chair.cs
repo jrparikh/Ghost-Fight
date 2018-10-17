@@ -36,6 +36,10 @@ public class Chair : MonoBehaviour {
 
     public bool isGrounded = true;
 
+	//Audio
+	public AudioSource Moving;
+	public AudioSource Kicking;
+	public AudioSource Dashing;
     void Start () {
 		switch (this.tag) {
 		case "Player1":
@@ -128,6 +132,7 @@ public class Chair : MonoBehaviour {
             attackTimer = attackCd;
             attackTrigger.enabled = true;
                 //State = 1;
+			Kicking.Play();
             anim.SetTrigger("Attack");
         }
 
@@ -150,6 +155,7 @@ public class Chair : MonoBehaviour {
 			SattackTimer = attackCd;
 			Flames.enabled = true;
 			GO.SetActive(true);
+			Dashing.Play ();
 		}
 		if (Sattacking) {
 			if (SattackTimer > 0)

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileDamage : MonoBehaviour {
-	public float Damage; 
+	public float Damage;
+	public AudioSource Hit;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,6 +17,7 @@ public class ProjectileDamage : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (col.gameObject.tag.Contains ("Player")) {
+			Hit.Play ();
 			col.gameObject.GetComponent<Health>().Myhealth -= Damage;
 		}
 		if (this.tag == "projectile") {
