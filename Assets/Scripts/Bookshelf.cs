@@ -33,6 +33,9 @@ public class Bookshelf : MonoBehaviour {
     private Animator anim;
     int State = 0;
 
+	//audio
+	public AudioSource Moving;
+	public AudioSource Shooting;
     // Use this for initialization
     void Start () {
 		switch (this.tag) {
@@ -96,7 +99,8 @@ public class Bookshelf : MonoBehaviour {
         if (Input.GetButtonDown(trigger)) //&& collisionCheck == true)
         {
             Fire();
-            anim.SetTrigger("Attack");
+			Shooting.Play ();
+			anim.SetTrigger("Attack");
         }
 
         if (Input.GetButtonDown(special))
