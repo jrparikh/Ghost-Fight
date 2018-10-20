@@ -22,7 +22,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 392}
   m_MaxSize: {x: 18006, y: 14042}
   vertical: 1
-  controlID: 2459
+  controlID: 5273
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 392}
   m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
-  controlID: 2460
+  controlID: 5274
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 14d4feff
-    m_LastClickedID: -76780
+    m_SelectedIDs: ec290000
+    m_LastClickedID: 0
     m_ExpandedIDs: 8ea3ffff30d3ffff3af5ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 392}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 2461
+  controlID: 5275
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -426,18 +426,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Resources
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Resources
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\parik\Documents\GitHub\Ghost-Fight
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c62b0000
-    m_LastClickedID: 11206
+    m_SelectedIDs: 5a2b0000
+    m_LastClickedID: 11098
     m_ExpandedIDs: 000000003e2b0000462b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -491,24 +491,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 14d4feff
-    m_LastClickedInstanceID: -76780
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000742700007e270000de87010058e401005ee401000e2d0000be2b0000c22b0000f63000001a2b0000343200009c900000de070000e01b00003e0f00003a29000000000000d82700003c2800008a4300002e2800001c280000a428000092290000
+    m_SelectedInstanceIDs: ec290000
+    m_LastClickedInstanceID: 10732
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000742700007e270000de87010058e401005ee401000e2d0000be2b0000c22b0000f63000001a2b0000343200009c900000de070000e01b00003e0f00003a29000000000000d82700003c2800008a4300002e2800001c280000a428000092290000ee290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: BookShot (1)
-      m_OriginalName: BookShot (1)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10674
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 4
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
