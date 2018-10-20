@@ -16,7 +16,8 @@ public class Chair : MonoBehaviour {
 	private bool Sattacking = false;
     private float attackTimer = 0;
 	private float SattackTimer = 0;
-    private float attackCd = 0.25f;
+    private float attackCd = 1.0f;
+	private float SattackCd = 0.25f;
     public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
 	public GameObject GO;
@@ -155,7 +156,7 @@ public class Chair : MonoBehaviour {
 		if (Input.GetButtonDown(special) && !Sattacking){
 			SpecialAttack ();
 			Sattacking = true;
-			SattackTimer = attackCd;
+			SattackTimer = SattackCd;
 			Flames.enabled = true;
 			GO.SetActive(true);
 			Dashing.Play ();
@@ -202,7 +203,7 @@ public class Chair : MonoBehaviour {
 			print (hit[i].collider);
 			if (hit[i].collider.tag.Contains ("Player")) {
 				if (hit [i].collider.tag != this.tag) {
-					hit [i].collider.GetComponent<Health> ().Myhealth -= 10f;
+					hit [i].collider.GetComponent<Health> ().Myhealth -= 7f;
 				}
 			
 			}
