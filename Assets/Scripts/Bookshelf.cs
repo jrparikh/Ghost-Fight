@@ -174,21 +174,21 @@ void Fire()
         if (facingRight)
         {
             GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
-            Destroy(clone, 2.0f);
+            Destroy(clone, 0.25f);
             GameObject clone1 = (GameObject)Instantiate(SpecialProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y + 0.5f), Quaternion.Euler(0, 30, 0));
-            Destroy(clone1, 2.0f);
+			Destroy(clone1, 0.25f);
             GameObject clone2 = (GameObject)Instantiate(SpecialProjectileRight2, new Vector3(transform.position.x + 1.2f, transform.position.y - 0.5f), transform.rotation);
-            Destroy(clone2, 2.0f);
+			Destroy(clone2, 0.25f);
         }
 
         if (!facingRight)
         {
             GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
-            Destroy(clone, 2.0f);
+            Destroy(clone, 0.25f);
             GameObject clone1 = (GameObject)Instantiate(SpecialProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y + 0.50f), transform.rotation);
-            Destroy(clone1, 2.0f);
+			Destroy(clone1, 0.25f);
             GameObject clone2 = (GameObject)Instantiate(SpecialProjectileLeft2, new Vector3(transform.position.x - 1.2f, transform.position.y - 0.50f), transform.rotation);
-            Destroy(clone2, 2.0f);
+			Destroy(clone2, 0.25f);
         }
     }
 	/*

@@ -194,7 +194,7 @@ public class Chair : MonoBehaviour {
 			Direction = -1;
 		}
 		//raycasts
-		RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position,transform.right,2f*Direction);
+		RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position,transform.right,4f*Direction);
 		Debug.DrawRay (transform.position, Vector3.right*Direction);
 		for (int i = 0; i < hit.Length; i++)
 		{
@@ -202,11 +202,11 @@ public class Chair : MonoBehaviour {
 			print (hit[i].collider);
 			if (hit[i].collider.tag.Contains ("Player")) {
 				if (hit [i].collider.tag != this.tag) {
-					hit [i].collider.GetComponent<Health> ().Myhealth -= 5f;
+					hit [i].collider.GetComponent<Health> ().Myhealth -= 10f;
 				}
 			
 			}
-			transform.position += transform.right * 2f * Direction;
+			transform.position += transform.right * 4f * Direction;
 
 		}
     }
