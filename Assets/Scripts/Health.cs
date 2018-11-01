@@ -9,6 +9,10 @@ public class Health : MonoBehaviour {
 	public SpriteRenderer healthBar;
 	private Vector3 healthScale;
 	public AudioSource Hit;
+	public bool Damaged;
+	private float DmgTimer = 0;
+	private float DmgCd = 0.25f;
+	public SpriteRenderer Damage;
 	// Use this for initialization
 	void Start () {
 		switch (this.tag) {
@@ -28,7 +32,22 @@ public class Health : MonoBehaviour {
 		UpdateHealthBar();
 		if (CurrentHealth != Myhealth) {
 			Hit.Play ();
+			Damaged = true;
 		}
+		//Display Damaged indicator
+		if (Damaged == true) {
+			DmgTimer = DmgCd;
+			Damaged = false;
+			Damage.enabled = true;
+		}
+		if (DmgTimer > 0) {
+			DmgTimer -= Time.deltaTime;
+		} 
+
+		else {
+			Damage.enabled = false;
+		}
+
 		if (Myhealth <= 0)
 		{
 			Death();
