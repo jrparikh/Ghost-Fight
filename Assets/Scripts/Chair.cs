@@ -199,8 +199,8 @@ public class Chair : MonoBehaviour {
 		Debug.DrawRay (transform.position, Vector3.right*Direction);
 		for (int i = 0; i < hit.Length; i++)
 		{
-			print ("hellow");
-			print (hit[i].collider);
+			//print ("hellow");
+			//print (hit[i].collider);
 			if (hit[i].collider.tag.Contains ("Player")) {
 				if (hit [i].collider.tag != this.tag) {
 					hit [i].collider.GetComponent<Health> ().Myhealth -= 7f;
