@@ -11,8 +11,10 @@ public class Health : MonoBehaviour {
 	public AudioSource Hit;
 	public bool Damaged;
 	private float DmgTimer = 0;
-	private float DmgCd = 0.25f;
+	private float DmgCd = 0.3f;
 	public SpriteRenderer Damage;
+	private Renderer MySprite;
+	public Color Red = Color.white;
 	// Use this for initialization
 	void Start () {
 		switch (this.tag) {
@@ -23,6 +25,7 @@ public class Health : MonoBehaviour {
 			healthBar = GameObject.Find ("HealthBar2").GetComponent<SpriteRenderer> ();
 			break;
 		}
+		MySprite = GetComponent<Renderer>();
 		healthScale = healthBar.transform.localScale;
 		CurrentHealth = Myhealth;
 	}
@@ -38,14 +41,15 @@ public class Health : MonoBehaviour {
 		if (Damaged == true) {
 			DmgTimer = DmgCd;
 			Damaged = false;
-			Damage.enabled = true;
+			MySprite.material.color = Red; 
 		}
 		if (DmgTimer > 0) {
 			DmgTimer -= Time.deltaTime;
 		} 
 
 		else {
-			Damage.enabled = false;
+			MySprite.material.color = Color.white; 
+
 		}
 
 		if (Myhealth <= 0)
