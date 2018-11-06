@@ -639,7 +639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   collisionCheck: 0
-  attackTrigger: {fileID: 0}
   specialTrigger: {fileID: 0}
   GO: {fileID: 0}
   Flames: {fileID: 0}
@@ -1374,23 +1373,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1002731562 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1917963625826940, guid: 756ab18dddb664d07b793eadb0deb43a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1042462775}
---- !u!114 &1002731563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1002731562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dfa5b819cdd4a479ea7d20efa93d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player2HP: {fileID: 905444988}
 --- !u!4 &1002731569 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a,
@@ -1447,95 +1429,48 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.77
+      value: 0.92
       objectReference: {fileID: 0}
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: -6.98
       objectReference: {fileID: 0}
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4898301649620660, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+    - target: {fileID: 4582856147338346, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114081045202036962, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 2122832900}
-    - target: {fileID: 114295044218716686, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: Player2HP
-      value: 
-      objectReference: {fileID: 905444988}
-    - target: {fileID: 61331711271017054, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: m_IsTrigger
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50141138522806724, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 61331711271017054, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1917963625826940, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
-      propertyPath: m_TagString
-      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 114634740955339860, guid: 756ab18dddb664d07b793eadb0deb43a,
         type: 2}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2122832900}
-    - target: {fileID: 1880925313480534, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
-      propertyPath: m_TagString
-      value: attackTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 61182961642334012, guid: 756ab18dddb664d07b793eadb0deb43a,
+    - target: {fileID: 114757031249020000, guid: 756ab18dddb664d07b793eadb0deb43a,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880925313480534, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50005769976816950, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: m_SleepingMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61644343704912896, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: Player2HP
+      value: 
+      objectReference: {fileID: 905444988}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0

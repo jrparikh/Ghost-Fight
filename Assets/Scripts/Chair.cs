@@ -16,9 +16,9 @@ public class Chair : MonoBehaviour {
 	private bool Sattacking = false;
     private float attackTimer = 0;
 	private float SattackTimer = 0;
-    private float attackCd = 1.0f;
+    private float attackCd = 0.25f;
 	private float SattackCd = 0.25f;
-    public Collider2D attackTrigger;
+    //public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
 	public GameObject GO;
 	public SpriteRenderer Flames;
@@ -65,7 +65,7 @@ public class Chair : MonoBehaviour {
 		}
 		//healthScale = healthBar.transform.localScale;
 		GetComponent<Health>().Myhealth = health;
-		attackTrigger.enabled = false;
+		//attackTrigger.enabled = false;
 		Flames.enabled = false;
 		GO.SetActive(false);
         anim = GetComponent<Animator>();
@@ -134,7 +134,7 @@ public class Chair : MonoBehaviour {
         {
             attacking = true;
             attackTimer = attackCd;
-            attackTrigger.enabled = true;
+            //attackTrigger.enabled = true;
                 //State = 1;
 			Kicking.Play();
             anim.SetTrigger("Attack");
@@ -149,7 +149,7 @@ public class Chair : MonoBehaviour {
           else
           {
             attacking = false;
-            attackTrigger.enabled = false;
+            //attackTrigger.enabled = false;
            }
         }
 		
