@@ -1461,16 +1461,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114634740955339860, guid: 756ab18dddb664d07b793eadb0deb43a,
-        type: 2}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 2122832900}
     - target: {fileID: 114757031249020000, guid: 756ab18dddb664d07b793eadb0deb43a,
         type: 2}
       propertyPath: Player2HP
       value: 
       objectReference: {fileID: 905444988}
+    - target: {fileID: 114634740955339860, guid: 756ab18dddb664d07b793eadb0deb43a,
+        type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 2122832900}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0
@@ -1726,49 +1726,14 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1778440596}
-    - target: {fileID: 0}
+    - target: {fileID: 114082026416876686, guid: d68bb631570fe4586aa6184c4ac2692c,
+        type: 2}
       propertyPath: Player1HP
       value: 
       objectReference: {fileID: 1038916377}
-    - target: {fileID: 61576802796656064, guid: d68bb631570fe4586aa6184c4ac2692c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61576802796656064, guid: d68bb631570fe4586aa6184c4ac2692c,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670536042003506, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
-      propertyPath: m_TagString
-      value: Player1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114727805370872472, guid: d68bb631570fe4586aa6184c4ac2692c,
-        type: 2}
-      propertyPath: health
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d68bb631570fe4586aa6184c4ac2692c, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1714420883 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1670536042003506, guid: d68bb631570fe4586aa6184c4ac2692c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1714420882}
---- !u!114 &1714420884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1714420883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef2dc1bc846f4d14bece36432ad20ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player1HP: {fileID: 1038916377}
 --- !u!1 &1778440594
 GameObject:
   m_ObjectHideFlags: 0

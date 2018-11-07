@@ -9,7 +9,7 @@ public class Bookshelf : MonoBehaviour {
     //public Rigidbody2D rb2d;
 
     public GameObject ProjectileRight, ProjectileLeft;
-    public GameObject SpecialProjectileRight, SpecialProjectileLeft, SpecialProjectileRight2, SpecialProjectileLeft2;
+    public GameObject SpecialProjectileRight, SpecialProjectileLeft, SpecialProjectileRight2, SpecialProjectileLeft2, SpecialProjectileRight3, SpecialProjectileLeft3;
     public float fireSpeed;
     public float fireRate;
     public bool collisionCheck = false;
@@ -27,6 +27,14 @@ public class Bookshelf : MonoBehaviour {
     private string horizontalCtrl = "Horizontal_P2";
     private string trigger = "Fire_P2";
     private string special = "Fire2_P2";
+
+    //Fighting
+    private bool attacking = false;
+    private bool Sattacking = false;
+    private float attackTimer = 0;
+    private float SattackTimer = 0;
+    private float attackCd = 0.25f;
+    private float SattackCd = 0.90f;
 
     public Vector2 jumpHeight;
     public bool isGrounded = true;
@@ -97,21 +105,46 @@ public class Bookshelf : MonoBehaviour {
             isGrounded = false;
         }
 
-        if (Input.GetButtonDown(trigger)) //&& collisionCheck == true)
+        if (Input.GetButtonDown(trigger) && !attacking) //&& collisionCheck == true)
         {
+            attacking = true;
+            attackTimer = attackCd;
             Fire();
 			Shooting.Play ();
 			anim.SetTrigger("Attack");
         }
-
-        if (Input.GetButtonDown(special))
+        if (attacking)
+        {
+            if(attackTimer > 0)
+            {
+                attackTimer -= Time.deltaTime;
+            }
+            else
+            {
+                attacking = false;
+            }
+        }
+        if (Input.GetButtonDown(special) && !Sattacking)
         {
             SpecialAttack();
-			Shotgun.Play ();
+            Sattacking = true;
+            SattackTimer = SattackCd;
+            Shotgun.Play ();
             anim.SetTrigger("Attack");
         }
+        if (Sattacking)
+        {
+            if (SattackTimer > 0)
+            {
+                SattackTimer -= Time.deltaTime;
+            }
+            else
+            {
+                Sattacking = false;
+            }
+        }
 
-        if (Mathf.Abs(moveHorizontal) >= 0.0001)
+                if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
             State = 1;
 			if (!Moving.isPlaying) {
@@ -173,7 +206,7 @@ void Fire()
 
         if (facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(SpecialProjectileRight3, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
             Destroy(clone, 0.25f);
             GameObject clone1 = (GameObject)Instantiate(SpecialProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y + 0.5f), Quaternion.Euler(0, 30, 0));
 			Destroy(clone1, 0.25f);
@@ -183,7 +216,7 @@ void Fire()
 
         if (!facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(SpecialProjectileLeft3, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
             Destroy(clone, 0.25f);
             GameObject clone1 = (GameObject)Instantiate(SpecialProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y + 0.50f), transform.rotation);
 			Destroy(clone1, 0.25f);

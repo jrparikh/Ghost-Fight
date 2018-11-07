@@ -17,7 +17,7 @@ public class Chair : MonoBehaviour {
     private float attackTimer = 0;
 	private float SattackTimer = 0;
     private float attackCd = 0.25f;
-	private float SattackCd = 0.25f;
+	private float SattackCd = 1.0f;
     //public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
 	public GameObject GO;
