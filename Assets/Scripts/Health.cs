@@ -15,6 +15,7 @@ public class Health : MonoBehaviour {
 	public SpriteRenderer Damage;
 	private Renderer MySprite;
 	public Color Red = Color.white;
+	public bool Status = true;
 	// Use this for initialization
 	void Start () {
 		switch (this.tag) {
@@ -69,7 +70,7 @@ public class Health : MonoBehaviour {
 	}
 	void Death()
 	{
-		//Destroy(gameObject);
-		SceneManager.LoadScene("Test");
+		Destroy(gameObject);
+		//SceneManager.LoadScene("Test");
 	}
 }

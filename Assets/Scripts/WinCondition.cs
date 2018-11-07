@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class WinCondition : MonoBehaviour {
 
-	public float[] players;
+    public GameObject[] players;
 	// Use this for initialization
 	void Start () {
-       
+		players = GameObject.FindGameObjectsWithTag("Player");
     }
 	
 	// Update is called once per frame
 	void Update () {
-		for (int i = 0; i < 2; i++) {
-			string Player;
-			Player = "Player"+ i.ToString ();
-			print (Player); 
-		}
-
+		
 	}
 }
