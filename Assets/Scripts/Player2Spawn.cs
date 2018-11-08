@@ -12,6 +12,7 @@ public class Player2Spawn : MonoBehaviour {
 		MonoBehaviour script = (MonoBehaviour)Player2Clone.GetComponent(PlayerSelection.Player2);
 		script.enabled = true;
 		Player2Clone.tag = "Player2";
+		WinCondition.players.Add (Player2Clone);
 		Player2HP.GetComponent<FollowPlayer>().player = Player2Clone.transform;
 		Destroy (gameObject);
 

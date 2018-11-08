@@ -55,7 +55,17 @@ public class Health : MonoBehaviour {
 
 		if (Myhealth <= 0)
 		{
-			Death();
+			switch (this.tag) {
+				case "Player1":
+					Destroy (GameObject.Find ("Player1Health"));
+					break;
+				case "Player2":
+					Destroy (GameObject.Find ("Player2Health"));
+					break;
+			
+		  	}
+			Destroy (gameObject);
+			//StartCoroutine(Death());
 		}
 		CurrentHealth = Myhealth;
 	}
@@ -68,9 +78,6 @@ public class Health : MonoBehaviour {
 			// Set the scale of the health bar to be proportional to the player's health.
 		healthBar.transform.localScale = new Vector3(healthScale.x * Myhealth * 0.01f, 1, 1);
 	}
-	void Death()
-	{
-		Destroy(gameObject);
-		//SceneManager.LoadScene("Test");
-	}
+
+
 }
