@@ -52,21 +52,7 @@ public class Health : MonoBehaviour {
 			MySprite.material.color = Color.white; 
 
 		}
-
-		if (Myhealth <= 0)
-		{
-			switch (this.tag) {
-				case "Player1":
-					Destroy (GameObject.Find ("Player1Health"));
-					break;
-				case "Player2":
-					Destroy (GameObject.Find ("Player2Health"));
-					break;
 			
-		  	}
-			Destroy (gameObject);
-			//StartCoroutine(Death());
-		}
 		CurrentHealth = Myhealth;
 	}
 

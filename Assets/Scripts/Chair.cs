@@ -17,7 +17,7 @@ public class Chair : MonoBehaviour {
     private float attackTimer = 0;
 	private float SattackTimer = 0;
     private float attackCd = 0.25f;
-	private float SattackCd = 1.0f;
+	private float SattackCd = 0.6f;
     //public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
 	public GameObject GO;
@@ -159,6 +159,7 @@ public class Chair : MonoBehaviour {
 			SattackTimer = SattackCd;
 			Flames.enabled = true;
 			GO.SetActive(true);
+			speed = 0;
 			Dashing.Play ();
 		}
 		if (Sattacking) {
@@ -169,6 +170,7 @@ public class Chair : MonoBehaviour {
 			else
 			{
 				Sattacking = false;
+				speed = 10;
 				Flames.enabled = false;
 				GO.SetActive(false);
 			}
