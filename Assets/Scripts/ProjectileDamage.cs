@@ -39,8 +39,12 @@ public class ProjectileDamage : MonoBehaviour {
 			/*
 			FX.enabled = true;
 			attacking = true;
+			if (col.gameObject.tag != this.tag) {
+				
+			}
 			*/
-			col.gameObject.GetComponent<Health>().Myhealth -= Damage;
+			col.gameObject.GetComponent<Health> ().Myhealth -= Damage;
+
 		}
 		if (this.tag == "projectile") {
 			Destroy (gameObject);
