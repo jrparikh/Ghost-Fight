@@ -80,7 +80,9 @@ public class Bookshelf : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		//UpdateHealthBar();
-
+		if (WinCondition.End == true) {
+			speed = 0;
+		}
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float moveVertical = Input.GetAxis("Vertical");
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;

@@ -78,7 +78,9 @@ public class Chair : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+		if (WinCondition.End == true) {
+			speed = 0;
+		}
 		//UpdateHealthBar();
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         //float jump = Input.GetAxis("Jump_P1");
