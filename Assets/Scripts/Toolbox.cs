@@ -31,6 +31,7 @@ public class Toolbox : MonoBehaviour {
     private float SattackCd = 0.90f;
 
     public int attackNum = 1;
+    public GameObject ProjectileRight, ProjectileLeft;
     //
 
 
@@ -92,16 +93,19 @@ public class Toolbox : MonoBehaviour {
             if (attackNum == 1)
             {
                 //attack 1
+                Fire1();
             }else if(attackNum == 2)
             {
                 //attack 2
+                Fire2();
             }
             else
             {
                 //attack 3
+                Fire3();
             }
 
-                Fire();
+            //Fire();
             //Shooting.Play();
             //anim.SetTrigger("Attack");
         }
@@ -136,15 +140,49 @@ public class Toolbox : MonoBehaviour {
             }
         }
     }
-    void Fire()
+    //Attack 1
+    void Fire1()
     {
-        //have to figure out three attacks
+        //Projectile attack
+        if (facingRight)
+        {
+            GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
+            Destroy(clone, 2.0f);
+        }
+
+        if (!facingRight)
+        {
+            GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
+            Destroy(clone, 2.0f);
+        }
+    }
+
+    //Attack 2
+    void Fire2()
+    {
+        //Melee?
+        //anim.SetTrigger("Melee_Attack");
+    }
+
+    //Attack 3
+    void Fire3()
+    {
+        //Do we need another? Maybe knockup?
+        //anim.SetTrigger("Smash");
     }
 
     void SpecialAttack()
     {
         //cycle between three attacks
         attackNum = attackNum % 3 + 1;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Floor")
+        {
+            isGrounded = true;
+        }
     }
 
     void Flip()
