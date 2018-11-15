@@ -146,7 +146,7 @@ public class Bookshelf : MonoBehaviour {
             }
         }
 
-                if (Mathf.Abs(moveHorizontal) >= 0.0001)
+        if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
             State = 1;
 			if (!Moving.isPlaying) {
