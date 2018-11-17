@@ -27,7 +27,7 @@ public class Toolbox : MonoBehaviour {
     private bool Sattacking = false;
     private float attackTimer = 0;
     private float SattackTimer = 0;
-    private float attackCd = 0.25f;
+    private float attackCd = 0.2f;
     private float SattackCd = 0.90f;
 
     public int attackNum = 1;
@@ -89,7 +89,7 @@ public class Toolbox : MonoBehaviour {
         {
             attacking = true;
             attackTimer = attackCd;
-
+            Debug.Log("Basic: " + attackCd);
             if (attackNum == 1)
             {
                 //attack 1
@@ -122,6 +122,7 @@ public class Toolbox : MonoBehaviour {
         }
         if (Input.GetButtonDown(special) && !Sattacking)
         {
+            Debug.Log("Special");
             SpecialAttack();
             Sattacking = true;
             SattackTimer = SattackCd;
@@ -175,6 +176,21 @@ public class Toolbox : MonoBehaviour {
     {
         //cycle between three attacks
         attackNum = attackNum % 3 + 1;
+        if (attackNum == 1)
+        {
+            //attack 1
+            attackCd = 0.2f;
+        }
+        else if (attackNum == 2)
+        {
+            //attack 2
+            attackCd = 0.3f;
+        }
+        else
+        {
+            //attack 3
+            attackCd = 0.5f;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
