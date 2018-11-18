@@ -28,7 +28,7 @@ public class Chair : MonoBehaviour {
     private Animator anim;
     int State = 0;
 
-	private float health = 100f;
+	//private float health = 100f;
     public float damageAmount = 10f;
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
@@ -64,7 +64,7 @@ public class Chair : MonoBehaviour {
 
 		}
 		//healthScale = healthBar.transform.localScale;
-		GetComponent<Health>().Myhealth = health;
+		//GetComponent<Health>().Myhealth = health;
 		//attackTrigger.enabled = false;
 		Flames.enabled = false;
 		GO.SetActive(false);

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Chair.cs" />
      <Compile Include="Assets\Scripts\ChairSelection.cs" />
      <Compile Include="Assets\Scripts\CursorMovement.cs" />
+     <Compile Include="Assets\Scripts\DebugControls.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\PlayerSelection.cs" />
      <Compile Include="Assets\Scripts\ProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
+     <Compile Include="Assets\Scripts\SmartHomeDevice.cs" />
      <Compile Include="Assets\Scripts\WinCondition.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/Volumes/MyHardDrive/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>

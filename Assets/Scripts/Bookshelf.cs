@@ -18,7 +18,7 @@ public class Bookshelf : MonoBehaviour {
     public bool facingRight = true;
     public int direction = 0;
 
-    private float health = 125f;
+    //private float health = 125f;
     public float damageAmount = 10f;
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
@@ -69,7 +69,7 @@ public class Bookshelf : MonoBehaviour {
 
 		}
 		//healthScale = healthBar.transform.localScale;
-		GetComponent<Health>().Myhealth = health;
+		//GetComponent<Health>().Myhealth = health;
 		rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -146,7 +146,7 @@ public class Bookshelf : MonoBehaviour {
             }
         }
 
-                if (Mathf.Abs(moveHorizontal) >= 0.0001)
+        if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
             State = 1;
 			if (!Moving.isPlaying) {
