@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Uh.unity
+- path: Assets/Scenes/SelectionScreen.unity
   isLoaded: 1
   isActive: 1

@@ -49,7 +49,8 @@ public class WinCondition : MonoBehaviour {
 		yield return new WaitForSeconds(3);
 		End = false;
 		players.Clear ();
-		SceneManager.LoadScene("Test");
+        CameraFollow.players.Clear();
+        SceneManager.LoadScene("Test");
 	}
 
 }
