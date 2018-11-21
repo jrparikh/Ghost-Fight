@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SmartHomeDevice : MonoBehaviour {
+	//Movement
 	public float speed;
 	public bool collisionCheck = false;
 	private string jumpButton = "Jump_P1";
@@ -14,7 +15,19 @@ public class SmartHomeDevice : MonoBehaviour {
 	private int CurrentJump = 0;
 	public bool isGrounded = true;
 	public bool facingRight = true;
+	//Attacking
+	private bool attacking = false;
+	private bool Sattacking = false;
+	private float attackTimer = 0;
+	private float SattackTimer = 0;
+	private float attackCd = 1f;
+	private float SattackCd = 0.90f;
+
+	public float Sky;
+	public GameObject Box;
+	//Animation
 	int State = 0;
+
 	// Use this for initialization
 	void Start () {
 		switch (this.tag) {
@@ -74,9 +87,33 @@ public class SmartHomeDevice : MonoBehaviour {
 				CurrentJump = 0;
 			}
 		}
+		if (Input.GetButtonDown(trigger) && !attacking) //&& collisionCheck == true)
+		{
+			attacking = true;
+			attackTimer = attackCd;
+			Fire();
+			//Shooting.Play ();
+			//anim.SetTrigger("Attack");
+		}
+		if (attacking)
+		{
+			if(attackTimer > 0)
+			{
+				attackTimer -= Time.deltaTime;
+			}
+			else
+			{
+				attacking = false;
+			}
+		}
 
 	}
-
+	void Fire()
+	{
+			GameObject clone = (GameObject)Instantiate(Box, new Vector3(transform.position.x, Sky), transform.rotation);
+			clone.GetComponent<ProjectileDamage> ().ParentString = this.tag;
+			Destroy(clone, 1.0f);
+	}
 	//Modify to flip a particle effect
 	void Flip()
 	{
