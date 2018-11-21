@@ -110,9 +110,11 @@ public class SmartHomeDevice : MonoBehaviour {
 	}
 	void Fire()
 	{
+			//Fade in Drone as well
 			GameObject clone = (GameObject)Instantiate(Box, new Vector3(transform.position.x, Sky), transform.rotation);
 			clone.GetComponent<ProjectileDamage> ().ParentString = this.tag;
 			Destroy(clone, 1.0f);
+			//Destroy Drone
 	}
 	//Modify to flip a particle effect
 	void Flip()
