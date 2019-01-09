@@ -33,7 +33,7 @@ public class Chair : MonoBehaviour {
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
 
-    public Vector2 jumpHeight;
+    public float jumpHeight;
 
     public bool isGrounded = true;
 
@@ -101,7 +101,7 @@ public class Chair : MonoBehaviour {
         {
             //speed = 0;
             //collisionCheck = false;
-            GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
             isGrounded = false;
             State = 2;
             anim.SetInteger("State", State);

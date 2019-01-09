@@ -617,6 +617,7 @@ MonoBehaviour:
   Damaged: 0
   Damage: {fileID: 0}
   Red: {r: 0.5588235, g: 0, b: 0, a: 1}
+  Status: 1
 --- !u!114 &114634740955339860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -636,7 +637,7 @@ MonoBehaviour:
   facingRight: 1
   damageAmount: 10
   healthBar: {fileID: 0}
-  jumpHeight: {x: 0, y: 20}
+  jumpHeight: 20
   isGrounded: 1
   Moving: {fileID: 82820444863564664}
   Kicking: {fileID: 82478297372824844}

@@ -60,10 +60,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 4
+  m_Mass: 6
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87af7e7a4b2acb41be0c413d1f9968a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   ProjectileRight: {fileID: 1073718989831430, guid: abd487a3c7fb33e45a2d12b2edacca27,
     type: 2}
   ProjectileLeft: {fileID: 1097531246782148, guid: 2f8f3466dfae2bf4ab5d5ae91dbd0f3e,
@@ -467,7 +467,7 @@ MonoBehaviour:
   direction: 0
   damageAmount: 10
   healthBar: {fileID: 0}
-  jumpHeight: {x: 0, y: 10}
+  jumpHeight: 10
   isGrounded: 1
   Moving: {fileID: 82745483386430888}
   Shooting: {fileID: 82246236329746182}
@@ -489,6 +489,7 @@ MonoBehaviour:
   Damaged: 0
   Damage: {fileID: 0}
   Red: {r: 0.5955882, g: 0, b: 0, a: 1}
+  Status: 1
 --- !u!212 &212928312161329028
 SpriteRenderer:
   m_ObjectHideFlags: 1

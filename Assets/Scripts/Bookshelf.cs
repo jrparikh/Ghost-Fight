@@ -36,7 +36,7 @@ public class Bookshelf : MonoBehaviour {
     private float attackCd = 0.25f;
     private float SattackCd = 0.90f;
 
-    public Vector2 jumpHeight;
+    public float jumpHeight;
     public bool isGrounded = true;
     private Animator anim;
     int State = 0;
@@ -103,7 +103,7 @@ public class Bookshelf : MonoBehaviour {
         {
             //speed = 0;
             //collisionCheck = false;
-            GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
             isGrounded = false;
         }
 
@@ -205,21 +205,24 @@ void Fire()
     void SpecialAttack()
     {
         fireRate = Time.time + fireSpeed;
-
+        
         if (facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(SpecialProjectileRight3, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(SpecialProjectileRight3, new Vector3(transform.position.x, transform.position.y), transform.rotation);
             Destroy(clone, 0.25f);
+            //Physics.IgnoreCollision(clone.GetComponent<Collider2D>(), GetComponent<Collider2D>());
             GameObject clone1 = (GameObject)Instantiate(SpecialProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y + 0.5f), Quaternion.Euler(0, 30, 0));
 			Destroy(clone1, 0.25f);
             GameObject clone2 = (GameObject)Instantiate(SpecialProjectileRight2, new Vector3(transform.position.x + 1.2f, transform.position.y - 0.5f), transform.rotation);
 			Destroy(clone2, 0.25f);
+            
         }
 
         if (!facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(SpecialProjectileLeft3, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(SpecialProjectileLeft3, new Vector3(transform.position.x, transform.position.y), transform.rotation);
             Destroy(clone, 0.25f);
+            Physics.IgnoreCollision(clone.GetComponent<BoxCollider>(), GetComponent<BoxCollider>());
             GameObject clone1 = (GameObject)Instantiate(SpecialProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y + 0.50f), transform.rotation);
 			Destroy(clone1, 0.25f);
             GameObject clone2 = (GameObject)Instantiate(SpecialProjectileLeft2, new Vector3(transform.position.x - 1.2f, transform.position.y - 0.50f), transform.rotation);

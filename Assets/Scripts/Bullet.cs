@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour {
     void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
-        //Physics.IgnoreCollision(transform.root.GetComponent<Collider>(), GetComponent<Collider>());
+        //Physics.IgnoreCollision(.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
     void Update()
@@ -20,15 +20,12 @@ public class Bullet : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Bookshelf")
-        {
-            return;
-        }else
-        {
-            //other.gameObject.GetComponent<Chair>().CurrentHP -= damage;
-            //DestroyObject(other.gameObject);
-            //Destroy(gameObject);
-        }
+        var magnitude = 3;
+        // calculate force vector
+        var force = transform.position - other.transform.position;
+        // normalize force vector to get direction only and trim magnitude
+        //force.Normalize();
+        gameObject.GetComponent<Rigidbody2D>().AddForce(-force * magnitude);
     }
     void OnTriggerEnter2D(Collider2D col)
     {
