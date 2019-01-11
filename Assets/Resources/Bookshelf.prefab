@@ -467,7 +467,7 @@ MonoBehaviour:
   direction: 0
   damageAmount: 10
   healthBar: {fileID: 0}
-  jumpHeight: 10
+  jumpHeight: 20
   isGrounded: 1
   Moving: {fileID: 82745483386430888}
   Shooting: {fileID: 82246236329746182}

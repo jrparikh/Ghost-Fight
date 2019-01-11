@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour {
     void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
-        //Physics.IgnoreCollision(.GetComponent<Collider>(), GetComponent<Collider>());
+        //Physics.IgnoreCollision(GetComponent<Collider>(), GetComponent<Collider>());
     }
 
     void Update()

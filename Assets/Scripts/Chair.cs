@@ -8,6 +8,7 @@ public class Chair : MonoBehaviour {
     public bool collisionCheck = false;
     private string jumpButton = "Jump_P1";
     private string horizontalCtrl = "Horizontal_P1";
+    private string verticalCtrl = "Vertical_P1";
     private string trigger = "Fire_P1";
     private string special = "Fire_P2";
 
@@ -49,6 +50,7 @@ public class Chair : MonoBehaviour {
 			//put controls here
             jumpButton = "Jump_P1";
             horizontalCtrl = "Horizontal_P1";
+            verticalCtrl = "Vertical_P1";
             trigger = "Fire_P1";
             special = "Fire2_P1";
             break;
@@ -58,6 +60,7 @@ public class Chair : MonoBehaviour {
             //put controls here
             jumpButton = "Jump_P2";
             horizontalCtrl = "Horizontal_P2";
+            verticalCtrl = "Vertical_P2";
             trigger = "Fire_P2";
             special = "Fire2_P2";
             break;
@@ -83,8 +86,7 @@ public class Chair : MonoBehaviour {
 		}
 		//UpdateHealthBar();
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
-        //float jump = Input.GetAxis("Jump_P1");
-        //float moveVertical = Input.GetAxis("Vertical");
+        float moveVertical = Input.GetAxisRaw(verticalCtrl);
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
 
@@ -178,8 +180,20 @@ public class Chair : MonoBehaviour {
 			}
 		}
 
-		 
-         
+        //check if we are ground and not on layer 10(Player layer)
+        if (isGrounded == true && gameObject.layer != 10)
+        {
+            gameObject.layer = 10; //we set layer to 10
+        }
+
+        //check if we are ground and DownArrow key is press
+        if (isGrounded == true && moveVertical < 0)
+
+        {
+            gameObject.layer = 9; //we set layer to 9(OneWayPlatform)
+        }
+
+
         //anim.SetInteger("State", State);
     }
     void Flip()

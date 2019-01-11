@@ -32,7 +32,10 @@ public class Toolbox : MonoBehaviour {
 
     public int attackNum = 1;
     public GameObject ProjectileRight, ProjectileLeft;
-    //
+
+    //Animation
+    private Animator anim;
+    int State = 1;
 
 
     // Use this for initialization
@@ -64,6 +67,10 @@ public class Toolbox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //Animator state check
+
+        //
         float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
 
@@ -84,7 +91,34 @@ public class Toolbox : MonoBehaviour {
             //collisionCheck = false;
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
+            //Jump Animation
+            //State = ;
+            //anim.SetInteger("State", State);
         }
+        /*
+         else if (Mathf.Abs(moveHorizontal) >= 0.0001)
+        {
+            if(attackNum == 1){
+                State = 3;//Screwdriver run
+                anim.SetInteger("State", State);
+            }else if(attackNum == 2)
+            {
+                State = 3;//Wrench run
+                anim.SetInteger("State", State);
+            }else if(attackNum == 3)
+            {
+                State = 3;//Hammer run
+                anim.SetInteger("State", State);
+            }
+        }
+        else if(Input.anyKey == false)// && anim != null)//|| Mathf.Abs(moveHorizontal) >= 0
+        {
+            State = 0;
+			//Moving.Stop ();
+            anim.SetInteger("State", State);
+
+        }
+         */
         if (Input.GetButtonDown(trigger) && !attacking) //&& collisionCheck == true)
         {
             attacking = true;
@@ -94,15 +128,18 @@ public class Toolbox : MonoBehaviour {
             {
                 //attack 1
                 Fire1();
+                //anim.SetTrigger("ScrewDriverAttack");
             }else if(attackNum == 2)
             {
                 //attack 2
                 Fire2();
+                //anim.SetTrigger("WrenchAttack");
             }
             else
             {
                 //attack 3
                 Fire3();
+                //anim.SetTrigger("MalletAttack");
             }
 
             //Fire();
@@ -126,8 +163,7 @@ public class Toolbox : MonoBehaviour {
             SpecialAttack();
             Sattacking = true;
             SattackTimer = SattackCd;
-            //Shotgun.Play();
-            //anim.SetTrigger("Attack");
+            //anim.SetTrigger("AttackSwitch");
         }
         if (Sattacking)
         {
@@ -141,7 +177,7 @@ public class Toolbox : MonoBehaviour {
             }
         }
     }
-    //Attack 1
+    //Attack 1: Screw Driver
     void Fire1()
     {
         //Projectile attack
@@ -180,6 +216,7 @@ public class Toolbox : MonoBehaviour {
         {
             //attack 1
             attackCd = 0.2f;
+            State = 1;
         }
         else if (attackNum == 2)
         {

@@ -25,6 +25,7 @@ public class Bookshelf : MonoBehaviour {
 
     private string jumpButton = "Jump_P2";
     private string horizontalCtrl = "Horizontal_P2";
+    private string verticalCtrl = "Vertical_P2";
     private string trigger = "Fire_P2";
     private string special = "Fire2_P2";
 
@@ -54,6 +55,7 @@ public class Bookshelf : MonoBehaviour {
             //put controls here
             jumpButton = "Jump_P1";
             horizontalCtrl = "Horizontal_P1";
+            verticalCtrl = "Vertical_P1";
             trigger = "Fire_P1";
             special = "Fire2_P1";
             break;
@@ -63,6 +65,7 @@ public class Bookshelf : MonoBehaviour {
             //put controls here
             jumpButton = "Jump_P2";
             horizontalCtrl = "Horizontal_P2";
+            verticalCtrl = "Vertical_P2";
             trigger = "Fire_P2";
             special = "Fire2_P2";
             break;
@@ -84,7 +87,7 @@ public class Bookshelf : MonoBehaviour {
 			speed = 0;
 		}
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
-        //float moveVertical = Input.GetAxis("Vertical");
+        float moveVertical = Input.GetAxisRaw(verticalCtrl);
         transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
         //transform.position += transform.up * Time.deltaTime * speed * moveVertical;
         //Vector2 move = new Vector2(moveHorizontal,0);
@@ -112,7 +115,7 @@ public class Bookshelf : MonoBehaviour {
             attacking = true;
             attackTimer = attackCd;
             Fire();
-			Shooting.Play ();
+            Shooting.Play ();
 			anim.SetTrigger("Attack");
         }
         if (attacking)
@@ -160,7 +163,19 @@ public class Bookshelf : MonoBehaviour {
 			Moving.Stop ();
             anim.SetInteger("State", State);
         }
-       
+
+        //check if we are ground and not on layer 10(Player layer)
+        if (isGrounded == true && gameObject.layer != 10)
+        {
+            gameObject.layer = 10; //we set layer to 10
+        }
+
+        //check if we are ground and DownArrow key is press
+        if (isGrounded == true && moveVertical < 0)
+
+        {
+            gameObject.layer = 9; //we set layer to 9(OneWayPlatform)
+        }
     }
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -187,46 +202,57 @@ public class Bookshelf : MonoBehaviour {
     }*/
 void Fire()
     {
-        fireRate = Time.time + fireSpeed;
-        
-        if(facingRight)
+        if (facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x, transform.position.y), transform.rotation);
             Destroy(clone, 2.0f);
+            Physics2D.IgnoreCollision(clone.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
 
         if (!facingRight)
         {
-            GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x, transform.position.y), transform.rotation);
             Destroy(clone, 2.0f);
+            Physics2D.IgnoreCollision(clone.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
     }
 
     void SpecialAttack()
     {
-        fireRate = Time.time + fireSpeed;
-        
         if (facingRight)
         {
+            //center bullet
             GameObject clone = (GameObject)Instantiate(SpecialProjectileRight3, new Vector3(transform.position.x, transform.position.y), transform.rotation);
             Destroy(clone, 0.25f);
-            //Physics.IgnoreCollision(clone.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-            GameObject clone1 = (GameObject)Instantiate(SpecialProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y + 0.5f), Quaternion.Euler(0, 30, 0));
-			Destroy(clone1, 0.25f);
-            GameObject clone2 = (GameObject)Instantiate(SpecialProjectileRight2, new Vector3(transform.position.x + 1.2f, transform.position.y - 0.5f), transform.rotation);
-			Destroy(clone2, 0.25f);
-            
+            Physics2D.IgnoreCollision(clone.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
+
+            //top bullet
+            GameObject clone1 = (GameObject)Instantiate(SpecialProjectileRight, new Vector3(transform.position.x, transform.position.y + 0.5f), Quaternion.Euler(0, 30, 0));
+            Destroy(clone1, 0.25f);
+            Physics2D.IgnoreCollision(clone1.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
+
+            //bottom bullet
+            GameObject clone2 = (GameObject)Instantiate(SpecialProjectileRight2, new Vector3(transform.position.x, transform.position.y - 0.5f), transform.rotation);
+            Destroy(clone2, 0.25f);
+            Physics2D.IgnoreCollision(clone2.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
 
         if (!facingRight)
         {
+            //center bullet
             GameObject clone = (GameObject)Instantiate(SpecialProjectileLeft3, new Vector3(transform.position.x, transform.position.y), transform.rotation);
             Destroy(clone, 0.25f);
-            Physics.IgnoreCollision(clone.GetComponent<BoxCollider>(), GetComponent<BoxCollider>());
-            GameObject clone1 = (GameObject)Instantiate(SpecialProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y + 0.50f), transform.rotation);
-			Destroy(clone1, 0.25f);
-            GameObject clone2 = (GameObject)Instantiate(SpecialProjectileLeft2, new Vector3(transform.position.x - 1.2f, transform.position.y - 0.50f), transform.rotation);
-			Destroy(clone2, 0.25f);
+            Physics2D.IgnoreCollision(clone.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
+
+            //top bullet
+            GameObject clone1 = (GameObject)Instantiate(SpecialProjectileLeft, new Vector3(transform.position.x, transform.position.y + 0.50f), transform.rotation);
+            Destroy(clone1, 0.25f);
+            Physics2D.IgnoreCollision(clone1.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
+
+            //bottom bullet
+            GameObject clone2 = (GameObject)Instantiate(SpecialProjectileLeft2, new Vector3(transform.position.x, transform.position.y - 0.50f), transform.rotation);
+            Destroy(clone2, 0.25f);
+            Physics2D.IgnoreCollision(clone2.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
     }
 	/*
