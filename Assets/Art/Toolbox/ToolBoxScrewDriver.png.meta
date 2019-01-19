@@ -102,12 +102,12 @@ TextureImporter:
       name: ToolBoxScrewDriver_0
       rect:
         serializedVersion: 2
-        x: 146
-        y: 764
-        width: 752
-        height: 402
+        x: 134
+        y: 768
+        width: 766
+        height: 397
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -116,12 +116,12 @@ TextureImporter:
       name: ToolBoxScrewDriver_1
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 764
-        width: 752
-        height: 402
+        x: 1034
+        y: 768
+        width: 766
+        height: 397
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,12 +130,12 @@ TextureImporter:
       name: ToolBoxScrewDriver_2
       rect:
         serializedVersion: 2
-        x: 146
+        x: 134
         y: 0
-        width: 752
-        height: 402
+        width: 766
+        height: 397
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,12 +144,12 @@ TextureImporter:
       name: ToolBoxScrewDriver_3
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 0
-        width: 752
-        height: 402
+        x: 1034
+        y: 2
+        width: 766
+        height: 397
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

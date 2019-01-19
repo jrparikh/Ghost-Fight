@@ -1,0 +1,458 @@
+fileFormatVersion: 2
+guid: 004cb9fd7ca1ddc4aa4616503808e9ed
+timeCreated: 1547856047
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WrenchTemplate_0
+    21300002: WrenchTemplate_1
+    21300004: WrenchTemplate_2
+    21300006: WrenchTemplate_3
+    21300008: WrenchTemplate_4
+    21300010: WrenchTemplate_5
+    21300012: WrenchTemplate_6
+    21300014: WrenchTemplate_7
+    21300016: WrenchTemplate_8
+    21300018: WrenchTemplate_9
+    21300020: WrenchTemplate_10
+    21300022: WrenchTemplate_11
+    21300024: WrenchTemplate_12
+    21300026: WrenchTemplate_13
+    21300028: WrenchTemplate_14
+    21300030: WrenchTemplate_15
+    21300032: WrenchTemplate_16
+    21300034: WrenchTemplate_17
+    21300036: WrenchTemplate_18
+    21300038: WrenchTemplate_19
+    21300040: WrenchTemplate_20
+    21300042: WrenchTemplate_21
+    21300044: WrenchTemplate_22
+    21300046: WrenchTemplate_23
+    21300048: WrenchTemplate_24
+    21300050: WrenchTemplate_25
+    21300052: WrenchTemplate_26
+    21300054: WrenchTemplate_27
+    21300056: WrenchTemplate_28
+    21300058: WrenchTemplate_29
+    21300060: WrenchTemplate_30
+    21300062: WrenchTemplate_31
+    21300064: WrenchTemplate_32
+    21300066: WrenchTemplate_33
+    21300068: WrenchTemplate_34
+    21300070: WrenchTemplate_35
+    21300072: WrenchTemplate_36
+    21300074: WrenchTemplate_37
+    21300076: WrenchTemplate_38
+    21300078: WrenchTemplate_39
+    21300080: WrenchTemplate_40
+    21300082: WrenchTemplate_41
+    21300084: WrenchTemplate_42
+    21300086: WrenchTemplate_43
+    21300088: WrenchTemplate_44
+    21300090: WrenchTemplate_45
+    21300092: WrenchTemplate_46
+    21300094: WrenchTemplate_47
+    21300096: WrenchTemplate_48
+    21300098: WrenchTemplate_49
+    21300100: WrenchTemplate_50
+    21300102: WrenchTemplate_51
+    21300104: WrenchTemplate_52
+    21300106: WrenchTemplate_53
+    21300108: WrenchTemplate_54
+    21300110: WrenchTemplate_55
+    21300112: WrenchTemplate_56
+    21300114: WrenchTemplate_57
+    21300116: WrenchTemplate_58
+    21300118: WrenchTemplate_59
+    21300120: WrenchTemplate_60
+    21300122: WrenchTemplate_61
+    21300124: WrenchTemplate_62
+    21300126: WrenchTemplate_63
+    21300128: WrenchTemplate_64
+    21300130: WrenchTemplate_65
+    21300132: WrenchTemplate_66
+    21300134: WrenchTemplate_67
+    21300136: WrenchTemplate_68
+    21300138: WrenchTemplate_69
+    21300140: WrenchTemplate_70
+    21300142: WrenchTemplate_71
+    21300144: WrenchTemplate_72
+    21300146: WrenchTemplate_73
+    21300148: WrenchTemplate_74
+    21300150: WrenchTemplate_75
+    21300152: WrenchTemplate_76
+    21300154: WrenchTemplate_77
+    21300156: WrenchTemplate_78
+    21300158: WrenchTemplate_79
+    21300160: WrenchTemplate_80
+    21300162: WrenchTemplate_81
+    21300164: WrenchTemplate_82
+    21300166: WrenchTemplate_83
+    21300168: WrenchTemplate_84
+    21300170: WrenchTemplate_85
+    21300172: WrenchTemplate_86
+    21300174: WrenchTemplate_87
+    21300176: WrenchTemplate_88
+    21300178: WrenchTemplate_89
+    21300180: WrenchTemplate_90
+    21300182: WrenchTemplate_91
+    21300184: WrenchTemplate_92
+    21300186: WrenchTemplate_93
+    21300188: WrenchTemplate_94
+    21300190: WrenchTemplate_95
+    21300192: WrenchTemplate_96
+    21300194: WrenchTemplate_97
+    21300196: WrenchTemplate_98
+    21300198: WrenchTemplate_99
+    21300200: WrenchTemplate_100
+    21300202: WrenchTemplate_101
+    21300204: WrenchTemplate_102
+    21300206: WrenchTemplate_103
+    21300208: WrenchTemplate_104
+    21300210: WrenchTemplate_105
+    21300212: WrenchTemplate_106
+    21300214: WrenchTemplate_107
+    21300216: WrenchTemplate_108
+    21300218: WrenchTemplate_109
+    21300220: WrenchTemplate_110
+    21300222: WrenchTemplate_111
+    21300224: WrenchTemplate_112
+    21300226: WrenchTemplate_113
+    21300228: WrenchTemplate_114
+    21300230: WrenchTemplate_115
+    21300232: WrenchTemplate_116
+    21300234: WrenchTemplate_117
+    21300236: WrenchTemplate_118
+    21300238: WrenchTemplate_119
+    21300240: WrenchTemplate_120
+    21300242: WrenchTemplate_121
+    21300244: WrenchTemplate_122
+    21300246: WrenchTemplate_123
+    21300248: WrenchTemplate_124
+    21300250: WrenchTemplate_125
+    21300252: WrenchTemplate_126
+    21300254: WrenchTemplate_127
+    21300256: WrenchTemplate_128
+    21300258: WrenchTemplate_129
+    21300260: WrenchTemplate_130
+    21300262: WrenchTemplate_131
+    21300264: WrenchTemplate_132
+    21300266: WrenchTemplate_133
+    21300268: WrenchTemplate_134
+    21300270: WrenchTemplate_135
+    21300272: WrenchTemplate_136
+    21300274: WrenchTemplate_137
+    21300276: WrenchTemplate_138
+    21300278: WrenchTemplate_139
+    21300280: WrenchTemplate_140
+    21300282: WrenchTemplate_141
+    21300284: WrenchTemplate_142
+    21300286: WrenchTemplate_143
+    21300288: WrenchTemplate_144
+    21300290: WrenchTemplate_145
+    21300292: WrenchTemplate_146
+    21300294: WrenchTemplate_147
+    21300296: WrenchTemplate_148
+    21300298: WrenchTemplate_149
+    21300300: WrenchTemplate_150
+    21300302: WrenchTemplate_151
+    21300304: WrenchTemplate_152
+    21300306: WrenchTemplate_153
+    21300308: WrenchTemplate_154
+    21300310: WrenchTemplate_155
+    21300312: WrenchTemplate_156
+    21300314: WrenchTemplate_157
+    21300316: WrenchTemplate_158
+    21300318: WrenchTemplate_159
+    21300320: WrenchTemplate_160
+    21300322: WrenchTemplate_161
+    21300324: WrenchTemplate_162
+    21300326: WrenchTemplate_163
+    21300328: WrenchTemplate_164
+    21300330: WrenchTemplate_165
+    21300332: WrenchTemplate_166
+    21300334: WrenchTemplate_167
+    21300336: WrenchTemplate_168
+    21300338: WrenchTemplate_169
+    21300340: WrenchTemplate_170
+    21300342: WrenchTemplate_171
+    21300344: WrenchTemplate_172
+    21300346: WrenchTemplate_173
+    21300348: WrenchTemplate_174
+    21300350: WrenchTemplate_175
+    21300352: WrenchTemplate_176
+    21300354: WrenchTemplate_177
+    21300356: WrenchTemplate_178
+    21300358: WrenchTemplate_179
+    21300360: WrenchTemplate_180
+    21300362: WrenchTemplate_181
+    21300364: WrenchTemplate_182
+    21300366: WrenchTemplate_183
+    21300368: WrenchTemplate_184
+    21300370: WrenchTemplate_185
+    21300372: WrenchTemplate_186
+    21300374: WrenchTemplate_187
+    21300376: WrenchTemplate_188
+    21300378: WrenchTemplate_189
+    21300380: WrenchTemplate_190
+    21300382: WrenchTemplate_191
+    21300384: WrenchTemplate_192
+    21300386: WrenchTemplate_193
+    21300388: WrenchTemplate_194
+    21300390: WrenchTemplate_195
+    21300392: WrenchTemplate_196
+    21300394: WrenchTemplate_197
+    21300396: WrenchTemplate_198
+    21300398: WrenchTemplate_199
+    21300400: WrenchTemplate_200
+    21300402: WrenchTemplate_201
+    21300404: WrenchTemplate_202
+    21300406: WrenchTemplate_203
+    21300408: WrenchTemplate_204
+    21300410: WrenchTemplate_205
+    21300412: WrenchTemplate_206
+    21300414: WrenchTemplate_207
+    21300416: WrenchTemplate_208
+    21300418: WrenchTemplate_209
+    21300420: WrenchTemplate_210
+    21300422: WrenchTemplate_211
+    21300424: WrenchTemplate_212
+    21300426: WrenchTemplate_213
+    21300428: WrenchTemplate_214
+    21300430: WrenchTemplate_215
+    21300432: WrenchTemplate_216
+    21300434: WrenchTemplate_217
+    21300436: WrenchTemplate_218
+    21300438: WrenchTemplate_219
+    21300440: WrenchTemplate_220
+    21300442: WrenchTemplate_221
+    21300444: WrenchTemplate_222
+    21300446: WrenchTemplate_223
+    21300448: WrenchTemplate_224
+    21300450: WrenchTemplate_225
+    21300452: WrenchTemplate_226
+    21300454: WrenchTemplate_227
+    21300456: WrenchTemplate_228
+    21300458: WrenchTemplate_229
+    21300460: WrenchTemplate_230
+    21300462: WrenchTemplate_231
+    21300464: WrenchTemplate_232
+    21300466: WrenchTemplate_233
+    21300468: WrenchTemplate_234
+    21300470: WrenchTemplate_235
+    21300472: WrenchTemplate_236
+    21300474: WrenchTemplate_237
+    21300476: WrenchTemplate_238
+    21300478: WrenchTemplate_239
+    21300480: WrenchTemplate_240
+    21300482: WrenchTemplate_241
+    21300484: WrenchTemplate_242
+    21300486: WrenchTemplate_243
+    21300488: WrenchTemplate_244
+    21300490: WrenchTemplate_245
+    21300492: WrenchTemplate_246
+    21300494: WrenchTemplate_247
+    21300496: WrenchTemplate_248
+    21300498: WrenchTemplate_249
+    21300500: WrenchTemplate_250
+    21300502: WrenchTemplate_251
+    21300504: WrenchTemplate_252
+    21300506: WrenchTemplate_253
+    21300508: WrenchTemplate_254
+    21300510: WrenchTemplate_255
+    21300512: WrenchTemplate_256
+    21300514: WrenchTemplate_257
+    21300516: WrenchTemplate_258
+    21300518: WrenchTemplate_259
+    21300520: WrenchTemplate_260
+    21300522: WrenchTemplate_261
+    21300524: WrenchTemplate_262
+    21300526: WrenchTemplate_263
+    21300528: WrenchTemplate_264
+    21300530: WrenchTemplate_265
+    21300532: WrenchTemplate_266
+    21300534: WrenchTemplate_267
+    21300536: WrenchTemplate_268
+    21300538: WrenchTemplate_269
+    21300540: WrenchTemplate_270
+    21300542: WrenchTemplate_271
+    21300544: WrenchTemplate_272
+    21300546: WrenchTemplate_273
+    21300548: WrenchTemplate_274
+    21300550: WrenchTemplate_275
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WrenchTemplate_0
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1537
+        width: 555
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WrenchTemplate_1
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1537
+        width: 555
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WrenchTemplate_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 770
+        width: 555
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WrenchTemplate_3
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 770
+        width: 555
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WrenchTemplate_4
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 3
+        width: 555
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WrenchTemplate_5
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 2
+        width: 555
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
