@@ -2,14 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SmartHomeDevice.cs">
     <Files>
-      <File FileName="Assets/Scripts/Bookshelf.cs" Line="203" Column="6" />
-      <File FileName="Assets/Scripts/SmartHomeDevice.cs" Line="117" Column="19" NotebookId="1" />
-      <File FileName="Assets/Scripts/Chair.cs" Line="255" Column="10" NotebookId="1" />
-      <File FileName="Assets/Scripts/DebugControls.cs" Line="15" Column="18" NotebookId="1" />
-      <File FileName="Assets/Scripts/WinCondition.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/WinCondition.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SmartHomeDevice.cs" Line="132" Column="6" />
+      <File FileName="Assets/Scripts/Chair.cs" Line="24" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/DebugControls.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="Assets/Scripts/Health.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="Assets/Scripts/Bullet.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Scripts/ProjectileDamage.cs" Line="68" Column="5" NotebookId="1" />
+      <File FileName="Assets/Scripts/ProjectileDamage.cs" Line="76" Column="4" NotebookId="1" />
+      <File FileName="Assets/Scripts/Bookshelf.cs" Line="147" Column="9" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -15,16 +15,21 @@ public class SmartHomeDevice : MonoBehaviour {
 	private int CurrentJump = 0;
 	public bool isGrounded = true;
 	public bool facingRight = true;
+	public bool SheildUP = false;
+	public float currSpeed;
 	//Attacking
 	private bool attacking = false;
 	private bool Sattacking = false;
 	private float attackTimer = 0;
 	private float SattackTimer = 0;
 	private float attackCd = 1f;
-	private float SattackCd = 0.90f;
-
+	private float SattackCd = 10f;
+	public  float CurrentHealth;
 	public float Sky;
 	public GameObject Box;
+	//NoteWave Object
+	public GameObject NoteWave;
+
 	//Animation
 	int State = 0;
 
@@ -107,6 +112,37 @@ public class SmartHomeDevice : MonoBehaviour {
 			}
 		}
 
+		//**********************************************
+		if (Input.GetButtonDown(special) && !Sattacking)
+		{
+			SpecialAttack();
+			Sattacking = true;
+			SattackTimer = SattackCd;
+			//bool for SheildUP
+			SheildUP = true;
+			//pause speed
+			currSpeed = speed;
+			speed = 0;
+			CurrentHealth = this.GetComponent<Health> ().Myhealth;
+			//Shotgun.Play ();
+			//anim.SetTrigger("Attack");
+		}
+		if (Sattacking) {
+			if (SattackTimer > 0) {
+				SattackTimer -= Time.deltaTime;
+			} else {
+				Sattacking = false;
+				SheildUP = false;
+				speed = currSpeed;
+			}
+		}
+		if (SheildUP == true) {
+			if (this.GetComponent<Health> ().Myhealth != CurrentHealth) {
+				this.GetComponent<Health> ().Myhealth = CurrentHealth;
+			}
+
+		}
+		//**********************************************
 	}
 	void Fire()
 	{
@@ -117,6 +153,10 @@ public class SmartHomeDevice : MonoBehaviour {
 			//Destroy Drone
 	}
 	//Modify to flip a particle effect
+	void SpecialAttack(){
+		GameObject clone = (GameObject)Instantiate(NoteWave, new Vector3(transform.position.x, transform.position.y), transform.rotation);
+		Destroy(clone, 10.0f);
+	}
 	void Flip()
 	{
 		facingRight = !facingRight;
