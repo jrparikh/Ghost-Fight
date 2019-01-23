@@ -23,7 +23,7 @@ public class SmartHomeDevice : MonoBehaviour {
 	private float attackTimer = 0;
 	private float SattackTimer = 0;
 	private float attackCd = 1f;
-	private float SattackCd = 10f;
+	private float SattackCd = 5f;
 	public  float CurrentHealth;
 	public float Sky;
 	public GameObject Box;
@@ -56,7 +56,7 @@ public class SmartHomeDevice : MonoBehaviour {
 			break;
 
 		}
-
+		NoteWave.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -134,6 +134,7 @@ public class SmartHomeDevice : MonoBehaviour {
 				Sattacking = false;
 				SheildUP = false;
 				speed = currSpeed;
+				NoteWave.SetActive(false);
 			}
 		}
 		if (SheildUP == true) {
@@ -154,8 +155,8 @@ public class SmartHomeDevice : MonoBehaviour {
 	}
 	//Modify to flip a particle effect
 	void SpecialAttack(){
-		GameObject clone = (GameObject)Instantiate(NoteWave, new Vector3(transform.position.x, transform.position.y), transform.rotation);
-		Destroy(clone, 10.0f);
+		NoteWave.SetActive(true);
+
 	}
 	void Flip()
 	{
