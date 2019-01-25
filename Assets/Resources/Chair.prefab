@@ -634,6 +634,7 @@ MonoBehaviour:
   specialTrigger: {fileID: 0}
   GO: {fileID: 1666219992186638}
   Flames: {fileID: 212013001151666996}
+  Atrigger: {fileID: 1744256364467668}
   facingRight: 1
   damageAmount: 10
   healthBar: {fileID: 0}
@@ -654,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 15
+  ParentString: 
 --- !u!198 &198331069897166726
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -67,26 +67,20 @@ public class SmartHomeDevice : MonoBehaviour {
 		if (WinCondition.End == true) {
 			speed = 0;
 		}
-		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
-        float moveVertical = Input.GetAxisRaw(verticalCtrl);
-        transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
-		if (moveHorizontal > 0 && !facingRight)
-		{
-			//Flip();
-			//flip particles
-		}
-		else if (moveHorizontal < 0 && facingRight)
-		{ 
-			//Flip();
-			//flip particles
-		}
 
-		if (Input.GetButtonDown(jumpButton) && CurrentJump < JumpLimit)
+
+		float moveHorizontal = Input.GetAxisRaw (horizontalCtrl);
+		float moveVertical = Input.GetAxisRaw (verticalCtrl);
+		if(SheildUP == false)
 		{
-            //speed = 0;
-            //collisionCheck = false;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
-            isGrounded = false;
+		transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
+	
+
+		if (Input.GetButtonDown (jumpButton) && CurrentJump < JumpLimit) {
+			//speed = 0;
+			//collisionCheck = false;
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, jumpHeight);
+			isGrounded = false;
 			CurrentJump++;
 			//State = 2;
 			//anim.SetInteger("State", State);
@@ -96,26 +90,21 @@ public class SmartHomeDevice : MonoBehaviour {
 				CurrentJump = 0;
 			}
 		}
-		if (Input.GetButtonDown(trigger) && !attacking) //&& collisionCheck == true)
-		{
+		if (Input.GetButtonDown (trigger) && !attacking) { //&& collisionCheck == true)
 			attacking = true;
 			attackTimer = attackCd;
-			Fire();
+			Fire ();
 			//Shooting.Play ();
 			//anim.SetTrigger("Attack");
 		}
-		if (attacking)
-		{
-			if(attackTimer > 0)
-			{
+		if (attacking) {
+			if (attackTimer > 0) {
 				attackTimer -= Time.deltaTime;
-			}
-			else
-			{
+			} else {
 				attacking = false;
 			}
 		}
-
+		}
 		//**********************************************
 		if (Input.GetButtonDown(special) && !Sattacking)
 		{
@@ -125,11 +114,9 @@ public class SmartHomeDevice : MonoBehaviour {
 			//bool for SheildUP
 			SheildUP = true;
 			//pause speed
-			currSpeed = speed;
-			speed = 0;
 			CurrentHealth = this.GetComponent<Health> ().Myhealth;
-			//Shotgun.Play ();
-			//anim.SetTrigger("Attack");
+			this.GetComponent<BoxCollider2D> ().enabled = false;
+			this.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePosition;
 		}
 		if (Sattacking) {
 			if (SattackTimer > 0) {
@@ -137,13 +124,16 @@ public class SmartHomeDevice : MonoBehaviour {
 			} else {
 				Sattacking = false;
 				SheildUP = false;
-				speed = currSpeed;
 				NoteWave.SetActive(false);
+				this.GetComponent<BoxCollider2D> ().enabled = true;
+				this.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
+				this.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
 			}
 		}
 		if (SheildUP == true) {
 			if (this.GetComponent<Health> ().Myhealth != CurrentHealth) {
 				this.GetComponent<Health> ().Myhealth = CurrentHealth;
+				this.GetComponent<Health> ().Damaged = false;
 			}
 
 		}

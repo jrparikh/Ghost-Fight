@@ -23,7 +23,7 @@ public class Chair : MonoBehaviour {
 	public Collider2D specialTrigger;
 	public GameObject GO;
 	public SpriteRenderer Flames;
-
+	public GameObject Atrigger;
     public bool facingRight = true;
 
     private Animator anim;
@@ -70,6 +70,8 @@ public class Chair : MonoBehaviour {
 		GetComponent<Health>().Myhealth = health;
 		//attackTrigger.enabled = false;
 		Flames.enabled = false;
+		//gives attackTrigger projectile damage a ParentString
+		Atrigger.GetComponent<ProjectileDamage> ().ParentString = this.tag;
 		GO.SetActive(false);
         anim = GetComponent<Animator>();
     }
