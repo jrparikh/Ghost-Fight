@@ -14,6 +14,7 @@ public class ProjectileDamage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+
 	}
 
 	// Update is called once per frame
@@ -56,6 +57,7 @@ public class ProjectileDamage : MonoBehaviour {
 	//Collison with projectiles that dont have trigger
 	void OnCollisionEnter2D(Collision2D col)
 	{
+		print ("here");
 		if (col.gameObject.tag.Contains ("Player")) {
 			//Hit.Play ();
 			/*
@@ -72,6 +74,7 @@ public class ProjectileDamage : MonoBehaviour {
 			}
 		}
 		if (this.tag == "projectile") {
+			
 			Destroy (gameObject);
 		}
 	}
