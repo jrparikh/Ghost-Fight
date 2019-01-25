@@ -35,7 +35,7 @@ public class Toolbox : MonoBehaviour {
 
     //Animation
     private Animator anim;
-    int State = 1;
+    private int State = 0;
 
 
     // Use this for initialization
@@ -63,6 +63,8 @@ public class Toolbox : MonoBehaviour {
             break;
 
         }
+        anim = GetComponent<Animator>();
+        anim.SetInteger("State", State);
     }
 	
 	// Update is called once per frame
@@ -95,6 +97,7 @@ public class Toolbox : MonoBehaviour {
             //State = ;
             //anim.SetInteger("State", State);
         }
+
         /*
          else if (Mathf.Abs(moveHorizontal) >= 0.0001)
         {
@@ -124,6 +127,8 @@ public class Toolbox : MonoBehaviour {
             attacking = true;
             attackTimer = attackCd;
             Debug.Log("Basic: " + attackCd);
+            anim.SetTrigger("Attack");
+            /*
             if (attackNum == 1)
             {
                 //attack 1
@@ -141,7 +146,7 @@ public class Toolbox : MonoBehaviour {
                 Fire3();
                 //anim.SetTrigger("MalletAttack");
             }
-
+             */
             //Fire();
             //Shooting.Play();
             //anim.SetTrigger("Attack");
@@ -159,7 +164,7 @@ public class Toolbox : MonoBehaviour {
         }
         if (Input.GetButtonDown(special) && !Sattacking)
         {
-            Debug.Log("Special");
+            Debug.Log(State);
             SpecialAttack();
             Sattacking = true;
             SattackTimer = SattackCd;
@@ -180,6 +185,7 @@ public class Toolbox : MonoBehaviour {
     //Attack 1: Screw Driver
     void Fire1()
     {
+        anim.SetTrigger("Attack");
         //Projectile attack
         if (facingRight)
         {
@@ -198,14 +204,14 @@ public class Toolbox : MonoBehaviour {
     void Fire2()
     {
         //Melee?
-        //anim.SetTrigger("Melee_Attack");
+        anim.SetTrigger("Attack");
     }
 
     //Attack 3
     void Fire3()
     {
         //Do we need another? Maybe knockup?
-        //anim.SetTrigger("Smash");
+        anim.SetTrigger("Attack");
     }
 
     void SpecialAttack()
@@ -217,17 +223,23 @@ public class Toolbox : MonoBehaviour {
             //attack 1
             attackCd = 0.2f;
             State = 1;
+            anim.SetInteger("State", State);
         }
         else if (attackNum == 2)
         {
             //attack 2
             attackCd = 0.3f;
+            State = 2;
+            anim.SetInteger("State", State);
         }
         else
         {
             //attack 3
             attackCd = 0.5f;
+            State = 0;
+            anim.SetInteger("State", State);
         }
+        anim.SetInteger("State", State);
     }
 
     void OnCollisionEnter2D(Collision2D col)
