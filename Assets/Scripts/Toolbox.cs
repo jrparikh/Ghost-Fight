@@ -63,6 +63,7 @@ public class Toolbox : MonoBehaviour {
             break;
 
         }
+        anim = GetComponent<Animator>();
         anim.SetInteger("State", State);
     }
 	
@@ -145,7 +146,7 @@ public class Toolbox : MonoBehaviour {
                 Fire3();
                 //anim.SetTrigger("MalletAttack");
             }
-            */
+             */
             //Fire();
             //Shooting.Play();
             //anim.SetTrigger("Attack");
@@ -184,6 +185,7 @@ public class Toolbox : MonoBehaviour {
     //Attack 1: Screw Driver
     void Fire1()
     {
+        anim.SetTrigger("Attack");
         //Projectile attack
         if (facingRight)
         {
@@ -202,14 +204,14 @@ public class Toolbox : MonoBehaviour {
     void Fire2()
     {
         //Melee?
-        //anim.SetTrigger("Attack");
+        anim.SetTrigger("Attack");
     }
 
     //Attack 3
     void Fire3()
     {
         //Do we need another? Maybe knockup?
-        //anim.SetTrigger("Attack");
+        anim.SetTrigger("Attack");
     }
 
     void SpecialAttack()
@@ -221,18 +223,21 @@ public class Toolbox : MonoBehaviour {
             //attack 1
             attackCd = 0.2f;
             State = 1;
+            anim.SetInteger("State", State);
         }
         else if (attackNum == 2)
         {
             //attack 2
             attackCd = 0.3f;
             State = 2;
+            anim.SetInteger("State", State);
         }
         else
         {
             //attack 3
             attackCd = 0.5f;
             State = 0;
+            anim.SetInteger("State", State);
         }
         anim.SetInteger("State", State);
     }
