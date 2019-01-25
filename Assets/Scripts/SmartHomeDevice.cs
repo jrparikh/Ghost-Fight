@@ -8,9 +8,10 @@ public class SmartHomeDevice : MonoBehaviour {
 	public bool collisionCheck = false;
 	private string jumpButton = "Jump_P1";
 	private string horizontalCtrl = "Horizontal_P1";
-	private string trigger = "Fire_P1";
+    private string verticalCtrl = "Vertical_P1";
+    private string trigger = "Fire_P1";
 	private string special = "Fire_P2";
-	public Vector2 jumpHeight;
+	public float jumpHeight;
 	private int JumpLimit = 3;
 	private int CurrentJump = 0;
 	public bool isGrounded = true;
@@ -42,7 +43,8 @@ public class SmartHomeDevice : MonoBehaviour {
 			//put controls here
 			jumpButton = "Jump_P1";
 			horizontalCtrl = "Horizontal_P1";
-			trigger = "Fire_P1";
+            verticalCtrl = "Vertical_P1";
+            trigger = "Fire_P1";
 			special = "Fire2_P1";
 			break;
 		case "Player2":
@@ -51,7 +53,8 @@ public class SmartHomeDevice : MonoBehaviour {
 			//put controls here
 			jumpButton = "Jump_P2";
 			horizontalCtrl = "Horizontal_P2";
-			trigger = "Fire_P2";
+            verticalCtrl = "Vertical_P2";
+            trigger = "Fire_P2";
 			special = "Fire2_P2";
 			break;
 
@@ -65,7 +68,8 @@ public class SmartHomeDevice : MonoBehaviour {
 			speed = 0;
 		}
 		float moveHorizontal = Input.GetAxisRaw(horizontalCtrl);
-		transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
+        float moveVertical = Input.GetAxisRaw(verticalCtrl);
+        transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
 		if (moveHorizontal > 0 && !facingRight)
 		{
 			//Flip();
@@ -79,10 +83,10 @@ public class SmartHomeDevice : MonoBehaviour {
 
 		if (Input.GetButtonDown(jumpButton) && CurrentJump < JumpLimit)
 		{
-			//speed = 0;
-			//collisionCheck = false;
-			GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
-			isGrounded = false;
+            //speed = 0;
+            //collisionCheck = false;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
+            isGrounded = false;
 			CurrentJump++;
 			//State = 2;
 			//anim.SetInteger("State", State);
@@ -143,8 +147,26 @@ public class SmartHomeDevice : MonoBehaviour {
 			}
 
 		}
-		//**********************************************
-	}
+
+        //check if we are ground and not on layer 10(Player layer)
+        if (isGrounded == true && gameObject.layer != 10)
+        {
+            gameObject.layer = 10; //we set layer to 10
+        }
+
+        //check if we are ground and DownArrow key is press
+        if (isGrounded == true && moveVertical < 0)
+
+        {
+            gameObject.layer = 9; //we set layer to 9(OneWayPlatform)
+        }
+
+
+        //anim.SetInteger("State", State);
+}
+
+    //**********************************************
+
 	void Fire()
 	{
 			//Fade in Drone as well
