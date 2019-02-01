@@ -22,7 +22,8 @@ public class Chair : MonoBehaviour {
     //public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
 	public GameObject GO;
-	public SpriteRenderer Flames;
+	public TrailRenderer Flames;
+    public float multiplier = 1.0f;
 	public GameObject Atrigger;
     public bool facingRight = true;
 
@@ -30,7 +31,7 @@ public class Chair : MonoBehaviour {
     int State = 0;
 
 	private float health = 100f;
-    public float damageAmount = 10f;
+    public float damageAmount = 10f;    
     public SpriteRenderer healthBar;
     private Vector3 healthScale;
 
@@ -68,8 +69,9 @@ public class Chair : MonoBehaviour {
 		}
 		//healthScale = healthBar.transform.localScale;
 		GetComponent<Health>().Myhealth = health;
-		//attackTrigger.enabled = false;
-		Flames.enabled = false;
+        //attackTrigger.enabled = false;
+        Flames = GetComponent<TrailRenderer>();
+		Flames.widthMultiplier = 0.0f;
 		//gives attackTrigger projectile damage a ParentString
 		Atrigger.GetComponent<ProjectileDamage> ().ParentString = this.tag;
 		GO.SetActive(false);
@@ -163,7 +165,7 @@ public class Chair : MonoBehaviour {
 			SpecialAttack ();
 			Sattacking = true;
 			SattackTimer = SattackCd;
-			Flames.enabled = true;
+			Flames.widthMultiplier = multiplier;
 			GO.SetActive(true);
 			speed = 0;
 			Dashing.Play ();
@@ -177,7 +179,7 @@ public class Chair : MonoBehaviour {
 			{
 				Sattacking = false;
 				speed = 10;
-				Flames.enabled = false;
+				Flames.widthMultiplier = 0.0f;
 				GO.SetActive(false);
 			}
 		}
