@@ -24,7 +24,7 @@ public class SmartHomeDevice : MonoBehaviour {
 	private float attackTimer = 0;
 	private float SattackTimer = 0;
 	private float attackCd = 1f;
-	private float SattackCd = 5f;
+	private float SattackCd = 4f;
 	public  float CurrentHealth;
 	public float Sky;
 	public GameObject Box;
@@ -121,13 +121,17 @@ public class SmartHomeDevice : MonoBehaviour {
 		if (Sattacking) {
 			if (SattackTimer > 0) {
 				SattackTimer -= Time.deltaTime;
-			} else {
-				Sattacking = false;
+			} 
+			if (SattackTimer< 2) {
+				
 				SheildUP = false;
-				NoteWave.SetActive(false);
+				NoteWave.SetActive (false);
 				this.GetComponent<BoxCollider2D> ().enabled = true;
 				this.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
 				this.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
+			} 
+			if(SattackTimer< 0) {
+				Sattacking = false;
 			}
 		}
 		if (SheildUP == true) {

@@ -1473,6 +1473,10 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2122832900}
+    - target: {fileID: 1917963625826940, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756ab18dddb664d07b793eadb0deb43a, type: 2}
   m_IsPrefabParent: 0
@@ -1967,8 +1971,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 919ccfcb4c36d45328b376f6667bcc6e,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 212359477241653172, guid: 6f263249105774f1c88c1305c18479c6,
         type: 2}
       propertyPath: m_Size.x
@@ -1982,7 +1985,7 @@ Prefab:
     - target: {fileID: 212359477241653172, guid: 6f263249105774f1c88c1305c18479c6,
         type: 2}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f263249105774f1c88c1305c18479c6, type: 2}
