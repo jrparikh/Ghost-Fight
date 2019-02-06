@@ -28,7 +28,7 @@ public class Toolbox : MonoBehaviour {
     private float attackTimer = 0;
     private float SattackTimer = 0;
     private float attackCd = 0.2f;
-    private float SattackCd = 0.90f;
+    private float SattackCd = 1.0f;
 
     public int attackNum = 1;
     public GameObject ProjectileRight, ProjectileLeft;
@@ -127,14 +127,19 @@ public class Toolbox : MonoBehaviour {
             attacking = true;
             attackTimer = attackCd;
             Debug.Log("Basic: " + attackCd);
-            anim.SetTrigger("Attack");
-            /*
+            speed = 0;
+            
             if (attackNum == 1)
             {
                 //attack 1
                 Fire1();
-                //anim.SetTrigger("ScrewDriverAttack");
-            }else if(attackNum == 2)
+                anim.SetTrigger("Attack");
+            }
+            else
+            {
+                anim.SetTrigger("Attack");
+            }
+            /*else if(attackNum == 2)
             {
                 //attack 2
                 Fire2();
@@ -160,11 +165,12 @@ public class Toolbox : MonoBehaviour {
             else
             {
                 attacking = false;
+                speed = 7;
             }
         }
         if (Input.GetButtonDown(special) && !Sattacking)
         {
-            Debug.Log(State);
+            //Debug.Log(State);
             SpecialAttack();
             Sattacking = true;
             SattackTimer = SattackCd;
@@ -191,12 +197,14 @@ public class Toolbox : MonoBehaviour {
         {
             GameObject clone = (GameObject)Instantiate(ProjectileRight, new Vector3(transform.position.x + 1.2f, transform.position.y), transform.rotation);
             Destroy(clone, 2.0f);
+            Physics2D.IgnoreCollision(clone.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
 
         if (!facingRight)
         {
             GameObject clone = (GameObject)Instantiate(ProjectileLeft, new Vector3(transform.position.x - 1.2f, transform.position.y), transform.rotation);
             Destroy(clone, 2.0f);
+            Physics2D.IgnoreCollision(clone.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
     }
 
@@ -218,24 +226,25 @@ public class Toolbox : MonoBehaviour {
     {
         //cycle between three attacks
         attackNum = attackNum % 3 + 1;
-        if (attackNum == 1)
+        Debug.Log(attackNum);
+        if (attackNum == 2)
         {
             //attack 1
-            attackCd = 0.2f;
+            attackCd = 0.3f;
             State = 1;
             anim.SetInteger("State", State);
         }
-        else if (attackNum == 2)
+        else if (attackNum == 3)
         {
             //attack 2
-            attackCd = 0.3f;
+            attackCd = 0.5f;
             State = 2;
             anim.SetInteger("State", State);
         }
-        else
+        else if(attackNum == 1)
         {
             //attack 3
-            attackCd = 0.5f;
+            attackCd = 0.2f;
             State = 0;
             anim.SetInteger("State", State);
         }

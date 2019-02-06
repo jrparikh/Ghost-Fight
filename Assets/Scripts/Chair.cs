@@ -21,7 +21,7 @@ public class Chair : MonoBehaviour {
 	private float SattackCd = 0.6f;
     //public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
-	public GameObject GO;
+	public ParticleSystem GO;
 	public TrailRenderer Flames;
     public float multiplier = 1.0f;
 	public GameObject Atrigger;
@@ -70,11 +70,11 @@ public class Chair : MonoBehaviour {
 		//healthScale = healthBar.transform.localScale;
 		GetComponent<Health>().Myhealth = health;
         //attackTrigger.enabled = false;
-        Flames = GetComponent<TrailRenderer>();
+        //Flames = GetComponent<TrailRenderer>();
 		Flames.widthMultiplier = 0.0f;
 		//gives attackTrigger projectile damage a ParentString
 		Atrigger.GetComponent<ProjectileDamage> ().ParentString = this.tag;
-		GO.SetActive(false);
+		GO.Stop();
         anim = GetComponent<Animator>();
     }
 
@@ -143,8 +143,9 @@ public class Chair : MonoBehaviour {
             attacking = true;
             attackTimer = attackCd;
             //attackTrigger.enabled = true;
-                //State = 1;
-			Kicking.Play();
+            //State = 1;
+            speed = 0;
+            Kicking.Play();
             anim.SetTrigger("Attack");
         }
 
@@ -158,7 +159,8 @@ public class Chair : MonoBehaviour {
           {
             attacking = false;
             //attackTrigger.enabled = false;
-           }
+            speed = 10;
+            }
         }
 		
 		if (Input.GetButtonDown(special) && !Sattacking){
@@ -166,7 +168,7 @@ public class Chair : MonoBehaviour {
 			Sattacking = true;
 			SattackTimer = SattackCd;
 			Flames.widthMultiplier = multiplier;
-			GO.SetActive(true);
+			GO.Play();
 			speed = 0;
 			Dashing.Play ();
 		}
@@ -179,8 +181,10 @@ public class Chair : MonoBehaviour {
 			{
 				Sattacking = false;
 				speed = 10;
+                
 				Flames.widthMultiplier = 0.0f;
-				GO.SetActive(false);
+                Debug.Log(Flames.widthMultiplier);
+                GO.Stop();
 			}
 		}
 
