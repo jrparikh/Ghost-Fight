@@ -29,8 +29,9 @@ public class SmartHomeDevice : MonoBehaviour {
 	public float Sky;
 	public GameObject Box;
 	//NoteWave Object
+	public AudioSource Drop;
 	public GameObject NoteWave;
-
+	public GameObject Particles;
 	//Animation
 	int State = 0;
 
@@ -59,6 +60,7 @@ public class SmartHomeDevice : MonoBehaviour {
 			break;
 
 		}
+		Particles.SetActive (false);
 		NoteWave.SetActive(false);
 	}
 	
@@ -71,6 +73,13 @@ public class SmartHomeDevice : MonoBehaviour {
 
 		float moveHorizontal = Input.GetAxisRaw (horizontalCtrl);
 		float moveVertical = Input.GetAxisRaw (verticalCtrl);
+		if (moveHorizontal == 0 && moveVertical == 0) {
+			Particles.SetActive (false);
+		} 
+		else {
+			Particles.SetActive (true);
+		}
+
 		if(SheildUP == false)
 		{
 		transform.position += transform.right * Time.deltaTime * speed * moveHorizontal;
@@ -167,6 +176,7 @@ public class SmartHomeDevice : MonoBehaviour {
 			GameObject clone = (GameObject)Instantiate(Box, new Vector3(transform.position.x, Sky), transform.rotation);
 			clone.GetComponent<ProjectileDamage> ().ParentString = this.tag;
 			Destroy(clone, 1.0f);
+			Drop.Play();
 			//Destroy Drone
 	}
 	//Modify to flip a particle effect
@@ -174,12 +184,12 @@ public class SmartHomeDevice : MonoBehaviour {
 		NoteWave.SetActive(true);
 
 	}
-	void Flip()
+	void Flip(GameObject item)
 	{
 		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		Quaternion theRotation = item.transform.localRotation;
+		theRotation.y *= 90;
+		item.transform.localRotation = theRotation;
 	}
 	void OnCollisionEnter2D(Collision2D col)
 	{
