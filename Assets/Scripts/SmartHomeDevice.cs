@@ -29,6 +29,7 @@ public class SmartHomeDevice : MonoBehaviour {
 	public float Sky;
 	public GameObject Box;
 	//NoteWave Object
+	public AudioSource Drop;
 	public GameObject NoteWave;
 	public GameObject Particles;
 	//Animation
@@ -175,6 +176,7 @@ public class SmartHomeDevice : MonoBehaviour {
 			GameObject clone = (GameObject)Instantiate(Box, new Vector3(transform.position.x, Sky), transform.rotation);
 			clone.GetComponent<ProjectileDamage> ().ParentString = this.tag;
 			Destroy(clone, 1.0f);
+			Drop.Play();
 			//Destroy Drone
 	}
 	//Modify to flip a particle effect
