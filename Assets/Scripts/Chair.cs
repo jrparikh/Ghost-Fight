@@ -22,6 +22,8 @@ public class Chair : MonoBehaviour {
     //public Collider2D attackTrigger;
 	public Collider2D specialTrigger;
 	public ParticleSystem GO;
+    //public ParticleSystem jumpPar;
+    public ParticleSystem landPar;
 	public TrailRenderer Flames;
     public float multiplier = 1.0f;
 	public GameObject Atrigger;
@@ -75,6 +77,7 @@ public class Chair : MonoBehaviour {
 		//gives attackTrigger projectile damage a ParentString
 		Atrigger.GetComponent<ProjectileDamage> ().ParentString = this.tag;
 		GO.Stop();
+        landPar.Stop();
         anim = GetComponent<Animator>();
     }
 
@@ -108,6 +111,8 @@ public class Chair : MonoBehaviour {
             //speed = 0;
             //collisionCheck = false;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
+            //jumpPar.Play();
+            landPar.Stop();
             isGrounded = false;
             State = 2;
             anim.SetInteger("State", State);
@@ -274,6 +279,7 @@ public class Chair : MonoBehaviour {
             isGrounded = true;
             State = 0;
             anim.SetInteger("State", State);
+            landPar.Play();
         }
         else
         {
