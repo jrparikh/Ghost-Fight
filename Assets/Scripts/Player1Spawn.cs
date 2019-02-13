@@ -10,6 +10,7 @@ public class Player1Spawn : MonoBehaviour {
 	void Start () {
 		Player1Clone = Instantiate (Resources.Load(PlayerSelection.Player1), transform.position, Quaternion.identity) as GameObject;
 		MonoBehaviour script = (MonoBehaviour)Player1Clone.GetComponent(PlayerSelection.Player1);
+		Player1Clone.SetActive (true); 
 		script.enabled = true;
 		Player1Clone.tag = "Player1";
 		WinCondition.players.Add (Player1Clone);

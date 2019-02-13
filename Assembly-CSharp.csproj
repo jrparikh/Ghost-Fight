@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Chair.cs" />
      <Compile Include="Assets\Scripts\ChairSelection.cs" />
+     <Compile Include="Assets\Scripts\CharacterSelect.cs" />
      <Compile Include="Assets\Scripts\CursorMovement.cs" />
      <Compile Include="Assets\Scripts\DebugControls.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
