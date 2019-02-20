@@ -5,7 +5,8 @@ using UnityEngine;
 public class CharacterSelect : MonoBehaviour {
 
 	public Sprite mySprite1;
-	//public Sprite mySprite2;
+    //public Sprite mySprite2;
+    public Sprite Border;
 	public GameObject myGameObj1;
 	public GameObject myGameObj2;
 	public GameObject Player1;
@@ -22,6 +23,7 @@ public class CharacterSelect : MonoBehaviour {
 	// Use this for initialization
 	void Update (){
 		if (Player1Enter == true) {
+            //
 			if (Input.GetButton(jumpButton)) {
 				PlayerSelection.Player1 = CharacterName;
 				myGameObj1.GetComponent<SpriteRenderer> ().sprite = mySprite1;
