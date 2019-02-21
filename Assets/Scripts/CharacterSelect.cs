@@ -6,8 +6,10 @@ public class CharacterSelect : MonoBehaviour {
 
 	public Sprite mySprite1;
     //public Sprite mySprite2;
-    public Sprite Border;
-	public GameObject myGameObj1;
+    public GameObject redBorder;
+    public GameObject blueBorder;
+    public GameObject diagBorder;
+    public GameObject myGameObj1;
 	public GameObject myGameObj2;
 	public GameObject Player1;
 	public GameObject Player2;
@@ -22,20 +24,31 @@ public class CharacterSelect : MonoBehaviour {
 	private string jumpButton2 = "Fire_P2";
 	// Use this for initialization
 	void Update (){
-		if (Player1Enter == true) {
-            //
-			if (Input.GetButton(jumpButton)) {
-				PlayerSelection.Player1 = CharacterName;
-				myGameObj1.GetComponent<SpriteRenderer> ().sprite = mySprite1;
-				myGameObj1.transform.position = new Vector3(myGameObj1.transform.position.x,PosY, myGameObj1.transform.position.z);
-				myGameObj1.transform.localScale = new Vector3(ScaleX,ScaleY, ScaleZ);
-				PlayerSelection.MinPlayersIn++;
-				Player1.GetComponent<CursorMovement> ().speed = 0;
-				Player1Enter = false;
-			}
-		}
-		if (Player2Enter == true) {
-			if (Input.GetButton(jumpButton2)) {
+        if (Player1Enter == true)
+        {
+            redBorder.SetActive(true);
+
+            if (Input.GetButton(jumpButton))
+            {
+                PlayerSelection.Player1 = CharacterName;
+                myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
+                myGameObj1.transform.position = new Vector3(myGameObj1.transform.position.x, PosY, myGameObj1.transform.position.z);
+                myGameObj1.transform.localScale = new Vector3(ScaleX, ScaleY, ScaleZ);
+                PlayerSelection.MinPlayersIn++;
+                Player1.GetComponent<CursorMovement>().speed = 0;
+                Player1Enter = false;
+            }
+        }
+        else //if (Player1Enter == false)
+        {
+            redBorder.SetActive(false);
+            diagBorder.SetActive(false);
+        }
+
+        if (Player2Enter == true) {
+            blueBorder.SetActive(true);
+            
+            if (Input.GetButton(jumpButton2)) {
 				PlayerSelection.Player2 = CharacterName;
 				myGameObj2.GetComponent<SpriteRenderer> ().sprite = mySprite1;
 				myGameObj2.transform.position = new Vector3(myGameObj2.transform.position.x,PosY, myGameObj2.transform.position.z);
@@ -44,8 +57,21 @@ public class CharacterSelect : MonoBehaviour {
 				Player2.GetComponent<CursorMovement> ().speed = 0;
 				Player2Enter = false;
 			}
-		}
-	}
+
+        }
+        else //if (Player2Enter == false)
+        {
+            blueBorder.SetActive(false);
+            diagBorder.SetActive(false);
+        }
+
+        if (Player1Enter == true && Player2Enter == true)
+        {
+            diagBorder.SetActive(true);
+            redBorder.SetActive(false);
+            blueBorder.SetActive(false);
+        }
+    }
 	void OnTriggerEnter2D(Collider2D col)
 	{
 
