@@ -38,7 +38,6 @@ public class CharacterSelect : MonoBehaviour {
             if (Input.GetButton(jumpButton))
             {                
                 anim.SetTrigger("Player1");
-                ps.Play();
                 PlayerSelection.Player1 = CharacterName;
                 myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
                 myGameObj1.transform.position = new Vector3(myGameObj1.transform.position.x, PosY, myGameObj1.transform.position.z);
@@ -60,7 +59,6 @@ public class CharacterSelect : MonoBehaviour {
             if (Input.GetButton(jumpButton2))
             {
                 anim.SetTrigger("Player2");
-                ps.Play();
                 PlayerSelection.Player2 = CharacterName;
 				myGameObj2.GetComponent<SpriteRenderer> ().sprite = mySprite1;
 				myGameObj2.transform.position = new Vector3(myGameObj2.transform.position.x,PosY, myGameObj2.transform.position.z);
