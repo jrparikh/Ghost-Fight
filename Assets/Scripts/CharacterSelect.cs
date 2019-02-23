@@ -13,6 +13,9 @@ public class CharacterSelect : MonoBehaviour {
 	public GameObject myGameObj2;
 	public GameObject Player1;
 	public GameObject Player2;
+    public Animator anim;
+
+    public ParticleSystem ps;
 	public float PosY;   
 	public float ScaleX;
 	public float ScaleY;  
@@ -23,13 +26,19 @@ public class CharacterSelect : MonoBehaviour {
 	private string jumpButton = "Fire_P1";
 	private string jumpButton2 = "Fire_P2";
 	// Use this for initialization
+    void Start()
+    {
+        ps = GetComponent<ParticleSystem>();
+    }
 	void Update (){
         if (Player1Enter == true)
         {
             redBorder.SetActive(true);
 
             if (Input.GetButton(jumpButton))
-            {
+            {                
+                anim.SetTrigger("Player1");
+                ps.Play();
                 PlayerSelection.Player1 = CharacterName;
                 myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
                 myGameObj1.transform.position = new Vector3(myGameObj1.transform.position.x, PosY, myGameObj1.transform.position.z);
@@ -48,8 +57,11 @@ public class CharacterSelect : MonoBehaviour {
         if (Player2Enter == true) {
             blueBorder.SetActive(true);
             
-            if (Input.GetButton(jumpButton2)) {
-				PlayerSelection.Player2 = CharacterName;
+            if (Input.GetButton(jumpButton2))
+            {
+                anim.SetTrigger("Player2");
+                ps.Play();
+                PlayerSelection.Player2 = CharacterName;
 				myGameObj2.GetComponent<SpriteRenderer> ().sprite = mySprite1;
 				myGameObj2.transform.position = new Vector3(myGameObj2.transform.position.x,PosY, myGameObj2.transform.position.z);
 				myGameObj2.transform.localScale = new Vector3(-ScaleX,ScaleY, ScaleZ);
