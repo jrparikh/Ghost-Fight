@@ -28,7 +28,7 @@ public class CharacterSelect : MonoBehaviour {
 	// Use this for initialization
     void Start()
     {
-        ps = GetComponent<ParticleSystem>();
+
     }
 	void Update (){
         if (Player1Enter == true)
@@ -39,9 +39,11 @@ public class CharacterSelect : MonoBehaviour {
             {                
                 anim.SetTrigger("Player1");
                 PlayerSelection.Player1 = CharacterName;
-                myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
-                myGameObj1.transform.position = new Vector3(myGameObj1.transform.position.x, PosY, myGameObj1.transform.position.z);
-                myGameObj1.transform.localScale = new Vector3(ScaleX, ScaleY, ScaleZ);
+                ps.Play();
+                StartCoroutine(timer1());
+                //myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
+                //myGameObj1.transform.position = new Vector3(myGameObj1.transform.position.x, PosY, myGameObj1.transform.position.z);
+                //myGameObj1.transform.localScale = new Vector3(ScaleX, ScaleY, ScaleZ);
                 PlayerSelection.MinPlayersIn++;
                 Player1.GetComponent<CursorMovement>().speed = 0;
                 Player1Enter = false;
@@ -60,9 +62,11 @@ public class CharacterSelect : MonoBehaviour {
             {
                 anim.SetTrigger("Player2");
                 PlayerSelection.Player2 = CharacterName;
-				myGameObj2.GetComponent<SpriteRenderer> ().sprite = mySprite1;
-				myGameObj2.transform.position = new Vector3(myGameObj2.transform.position.x,PosY, myGameObj2.transform.position.z);
-				myGameObj2.transform.localScale = new Vector3(-ScaleX,ScaleY, ScaleZ);
+                ps.Play();
+                StartCoroutine(timer2());
+                //myGameObj2.GetComponent<SpriteRenderer> ().sprite = mySprite1;
+				//myGameObj2.transform.position = new Vector3(myGameObj2.transform.position.x,PosY, myGameObj2.transform.position.z);
+				//myGameObj2.transform.localScale = new Vector3(-ScaleX,ScaleY, ScaleZ);
 				PlayerSelection.MinPlayersIn++;
 				Player2.GetComponent<CursorMovement> ().speed = 0;
 				Player2Enter = false;
@@ -106,5 +110,20 @@ public class CharacterSelect : MonoBehaviour {
 		}
 	}
 
+    IEnumerator timer1()
+    {
+        yield return new WaitForSecondsRealtime(0.35f);
+        myGameObj1.GetComponent<SpriteRenderer>().sprite = mySprite1;
+        myGameObj1.transform.position = new Vector3(myGameObj1.transform.position.x, PosY, myGameObj1.transform.position.z);
+        myGameObj1.transform.localScale = new Vector3(ScaleX, ScaleY, ScaleZ);
+    }
+
+    IEnumerator timer2()
+    {
+        yield return new WaitForSecondsRealtime(0.35f);
+        myGameObj2.GetComponent<SpriteRenderer>().sprite = mySprite1;
+        myGameObj2.transform.position = new Vector3(myGameObj2.transform.position.x,PosY, myGameObj2.transform.position.z);
+        myGameObj2.transform.localScale = new Vector3(-ScaleX,ScaleY, ScaleZ);
+    }
 
 }
